@@ -1,0 +1,1891 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://tempuri.org/RoGuiAutomation.xsd"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  xmlns:tcs="http://tempuri.org/RoFramework.xsd"
+  xmlns:gui="http://tempuri.org/RoGuiAutomation.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 测试脚本Gui操作框架
+      版权 著作权归属冯涛所有
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+    </xs:documentation>
+  </xs:annotation>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Imports
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Control Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="Control.Name" type="gui:Control.Name" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.IsEnabled" type="gui:Control.IsEnabled" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.Type" type="gui:Control.Type" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.IsAvailable" type="gui:Control.IsAvailable" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.IsVisible" type="gui:Control.IsVisible" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.AutomationID" type="gui:Control.AutomationID" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.ClassName" type="gui:Control.ClassName" substitutionGroup="tcs:Value" />
+  <xs:element name="Control.AccessKey" type="gui:Control.AccessKey" substitutionGroup="tcs:Value" />
+
+
+  <xs:element name="Control.Reset" type="gui:Control.Reset" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.TakeSnapshot" type="gui:Control.TakeSnapshot" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.WaitForAvailable" type="gui:Control.WaitForAvailable" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.WaitForUnavailable" type="gui:Control.WaitForUnavailable" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.WaitForDisabled" type="gui:Control.WaitForDisabled" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.WaitForEnabled" type="gui:Control.WaitForEnabled" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.WaitForVisible" type="gui:Control.WaitForVisible" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.WaitForInvisible" type="gui:Control.WaitForInvisible" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.ClickWithMouse" type="gui:Control.ClickWithMouse" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.MoveWithMouse" type="gui:Control.MoveWithMouse" substitutionGroup="tcs:Activity" />
+  <xs:element name="Control.BringToFront" type="gui:Control.BringToFront" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Button Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="Button.State" type="gui:Button.State" substitutionGroup="tcs:Value" />
+  <xs:element name="Button.Click" type="gui:Button.Click" substitutionGroup="tcs:Activity" />
+  <xs:element name="Button.Toggle" type="gui:Button.Toggle" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Calendar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                CheckBox Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="CheckBox.IsChecked" type="gui:CheckBox.IsChecked" substitutionGroup="tcs:Value" />
+  <xs:element name="CheckBox.State" type="gui:CheckBox.State" substitutionGroup="tcs:Value" />
+
+  <xs:element name="CheckBox.Check" type="gui:CheckBox.Check" substitutionGroup="tcs:Activity" />
+  <xs:element name="CheckBox.Uncheck" type="gui:CheckBox.Uncheck" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                ComboBox Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="ComboBox.Value" type="gui:ComboBox.Value" substitutionGroup="tcs:Value" />
+  <xs:element name="ComboBox.IsSelectionRequired" type="gui:ComboBox.IsSelectionRequired" substitutionGroup="tcs:Value" />
+  <xs:element name="ComboBox.CanSelectMultiple" type="gui:ComboBox.CanSelectMultiple" substitutionGroup="tcs:Value" />
+  <xs:element name="ComboBox.IsExpanded" type="gui:ComboBox.IsExpanded" substitutionGroup="tcs:Value" />
+  <xs:element name="ComboBox.IsCollapsed" type="gui:ComboBox.IsCollapsed" substitutionGroup="tcs:Value" />
+
+  <xs:element name="ComboBox.Expand" type="gui:ComboBox.Expand" substitutionGroup="tcs:Activity" />
+  <xs:element name="ComboBox.Collapse" type="gui:ComboBox.Collapse" substitutionGroup="tcs:Activity" />
+  <xs:element name="ComboBox.SetText" type="gui:ComboBox.SetText" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Custom Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                DataGrid Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="DataGrid.RowCount" type="gui:DataGrid.RowCount" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.ColumnCount" type="gui:DataGrid.ColumnCount" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.RowHeaders" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.ColumnHeaders" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.CanSelectMultiple" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.IsSelectionRequired" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.Selection" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.CanScrollHorizontally" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.CanScrollVertically" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.HorizontalPosition" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.VerticalPosition" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.ViewWidth" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="DataGrid.ViewHeight" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <xs:element name="DataGrid.Scroll" type="gui:Calendar.Scroll" substitutionGroup="tcs:Activity" />
+  <xs:element name="DataGrid.FindItem" type="gui:Calendar.FindItem" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                DataItem Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="DataItem.Row" type="gui:DataItem.Row" substitutionGroup="tcs:Value" />
+  <xs:element name="DataItem.Column" type="gui:DataItem.Column" substitutionGroup="tcs:Value" />
+  <xs:element name="DataItem.IsSelected" type="gui:DataItem.IsSelected" substitutionGroup="tcs:Value" />
+
+  <xs:element name="DataItem.Select" type="gui:DataItem.Select" substitutionGroup="tcs:Activity" />
+  <xs:element name="DataItem.Deselect" type="gui:DataItem.Deselect" substitutionGroup="tcs:Activity" />
+  <xs:element name="DataItem.EnterText" type="gui:DataItem.EnterText" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Document Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="Document.CanScrollHorizontally" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Document.CanScrollVertically" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Document.HorizontalPosition" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Document.VerticalPosition" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Document.ViewWidth" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Document.ViewHeight" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Document.Text" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Document.Scroll" type="gui:Document.Scroll" substitutionGroup="tcs:Activity" />
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Edit Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="Edit.Text" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Edit.EnterText" type="gui:Edit.EnterText" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Group Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Header Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                HeaderItem Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="HeaderItem.Click" type="gui:Button.Click" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Hyperlink Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="Hyperlink.Launch" type="gui:Hyperlink.Launch" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Image Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   List Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="List.Scroll" type="gui:Tab.Scroll" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                ListItem Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="ListItem.IsSelected" type="gui:ListItem.IsSelected" substitutionGroup="tcs:Value" />
+  <xs:element name="ListItem.Text" type="gui:ListItem.Text" substitutionGroup="tcs:Value" />
+
+  <xs:element name="ListItem.Click" type="gui:ListItem.Click" substitutionGroup="tcs:Activity" />
+  <xs:element name="ListItem.Select" type="gui:ListItem.Select" substitutionGroup="tcs:Activity" />
+  <xs:element name="ListItem.Deselect" type="gui:ListItem.Deselect" substitutionGroup="tcs:Activity" />
+  <xs:element name="ListItem.EnterText" type="gui:ListItem.EnterText" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Menu Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 MenuBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                MenuItem Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="MenuItem.IsSelected" type="gui:MenuItem.IsSelected" substitutionGroup="tcs:Value" />
+  <xs:element name="MenuItem.IsExpanded" type="gui:MenuItem.IsExpanded" substitutionGroup="tcs:Value" />
+  <xs:element name="MenuItem.IsCollapsed" type="gui:MenuItem.IsCollapsed" substitutionGroup="tcs:Value" />
+  <xs:element name="MenuItem.IsLeafNode" type="gui:MenuItem.IsLeafNode" substitutionGroup="tcs:Value" />
+  <xs:element name="MenuItem.IsToggledOn" type="gui:MenuItem.IsToggledOn" substitutionGroup="tcs:Value" />
+  <xs:element name="MenuItem.IsToggledOff" type="gui:MenuItem.IsToggledOff" substitutionGroup="tcs:Value" />
+
+  <xs:element name="MenuItem.Expand" type="gui:MenuItem.Expand" substitutionGroup="tcs:Activity" />
+  <xs:element name="MenuItem.Collapse" type="gui:MenuItem.Collapse" substitutionGroup="tcs:Activity" />
+  <xs:element name="MenuItem.Click" type="gui:MenuItem.Click" substitutionGroup="tcs:Activity" />
+  <xs:element name="MenuItem.Toggle" type="gui:MenuItem.Toggle" substitutionGroup="tcs:Activity" />
+  <xs:element name="MenuItem.Deselect" type="gui:MenuItem.Deselect" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Pane Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               ProgressBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="ProgressBar.Percentage" type="gui:ProgressBar.Percentage" substitutionGroup="tcs:Value" />
+  <xs:element name="ProgressBar.Minimum" type="gui:ProgressBar.Minimum" substitutionGroup="tcs:Value" />
+  <xs:element name="ProgressBar.Maximum" type="gui:ProgressBar.Maximum" substitutionGroup="tcs:Value" />
+  <xs:element name="ProgressBar.Value" type="gui:ProgressBar.Value" substitutionGroup="tcs:Value" />
+
+  <xs:element name="ProgressBar.SetValue" type="gui:ProgressBar.SetValue" substitutionGroup="tcs:Activity" />
+  <xs:element name="ProgressBar.SetPercentage" type="gui:ProgressBar.SetPercentage" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               RadioButton Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="RadioButton.IsSelected" type="gui:RadioButton.IsSelected" substitutionGroup="tcs:Value" />
+
+  <xs:element name="RadioButton.Select" type="gui:RadioButton.Select" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                ScrollBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="ScrollBar.Minimum" type="gui:ScrollBar.Minimum" substitutionGroup="tcs:Value" />
+  <xs:element name="ScrollBar.Maximum" type="gui:ScrollBar.Maximum" substitutionGroup="tcs:Value" />
+  <xs:element name="ScrollBar.Value" type="gui:ScrollBar.Value" substitutionGroup="tcs:Value" />
+
+  <xs:element name="ScrollBar.SetValue" type="gui:ScrollBar.SetValue" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                SemanticZoom Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="SemanticZoom.State" type="gui:SemanticZoom.State" substitutionGroup="tcs:Value" />
+
+  <xs:element name="SemanticZoom.Toggle" type="gui:SemanticZoom.Toggle" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                AppBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Separator Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Slider Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="Slider.Minimum" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Slider.Maximum" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Slider.Value" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Slider.State" type="gui:Slider.State" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Slider.SetValue" type="gui:Slider.SetValue" substitutionGroup="tcs:Activity" />
+  <xs:element name="Slider.Toggle" type="gui:Slider.Toggle" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Spinner Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="Spinner.Percentage" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Spinner.Minimum" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Spinner.Maximum" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Spinner.Value" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Spinner.SetValue" type="gui:Spinner.SetValue" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               SplitButton Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="SplitButton.Click" type="gui:Button.Click" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                StatusBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="StatusBar.Row" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="StatusBar.Column" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <xs:element name="StatusBar.FindItem" type="gui:StatusBar.FindItem" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Tab Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="Tab.Scroll" type="gui:Tab.Scroll" substitutionGroup="tcs:Activity" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 TabItem Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="TabItem.IsSelected" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="TabItem.Select" type="gui:ControlActivity" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Table Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="Table.Row" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Table.Column" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Table.RowSpan" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Table.ColumnSpan" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Table.RowHeaders" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Table.ColumnHeaders" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Table.FindItem" type="gui:Table.FindItem" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Text Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Thumb Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 TitleBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               ToggleButton Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="ToggleButton.State" type="gui:ToggleButton.State" substitutionGroup="tcs:Value" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 ToolBar Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 ToolTip Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="ToolTip.IsTopmost" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Tree Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:element name="Tree.RowCount" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+  <xs:element name="Tree.ColumnCount" type="gui:ControlValue" substitutionGroup="tcs:Value" />
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 TreeItem Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="TreeItem.IsSelected" type="gui:TreeItem.IsSelected" substitutionGroup="tcs:Value" />
+  <xs:element name="TreeItem.IsExpanded" type="gui:TreeItem.IsExpanded" substitutionGroup="tcs:Value" />
+  <xs:element name="TreeItem.IsCollapsed" type="gui:TreeItem.IsCollapsed" substitutionGroup="tcs:Value" />
+  <xs:element name="TreeItem.IsLeafNode" type="gui:TreeItem.IsLeafNode" substitutionGroup="tcs:Value" />
+
+  <xs:element name="TreeItem.Expand" type="gui:TreeItem.Expand" substitutionGroup="tcs:Activity" />
+  <xs:element name="TreeItem.Collapse" type="gui:TreeItem.Collapse" substitutionGroup="tcs:Activity" />
+  <xs:element name="TreeItem.Click" type="gui:TreeItem.Click" substitutionGroup="tcs:Activity" />
+  <xs:element name="TreeItem.ScrollUntilVisible" type="gui:TreeItem.ScrollUntilVisible" substitutionGroup="tcs:Activity" />
+  <xs:element name="TreeItem.Select" type="gui:TreeItem.Select" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Window Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:element name="Window.CanMinimize" type="gui:Window.CanMinimize" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.CanMaximize" type="gui:Window.CanMaximize" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsModal" type="gui:Window.IsModal" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsTopmost" type="gui:Window.IsTopmost" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsReadyForUserInteraction" type="gui:Window.IsReadyForUserInteraction" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsBlockedByModalWindow" type="gui:Window.IsBlockedByModalWindow" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsMinimized" type="gui:Window.IsMinimized" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsMaximized" type="gui:Window.IsMaximized" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.IsFloating" type="gui:Window.IsFloating" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.CanMove" type="gui:Window.CanMove" substitutionGroup="tcs:Value" />
+  <xs:element name="Window.CanResize" type="gui:Window.CanResize" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Window.Close" type="gui:Window.Close" substitutionGroup="tcs:Activity" />
+  <xs:element name="Window.Minimize" type="gui:Window.Minimize" substitutionGroup="tcs:Activity" />
+  <xs:element name="Window.Maximize" type="gui:Window.Maximize" substitutionGroup="tcs:Activity" />
+  <xs:element name="Window.Float" type="gui:Window.Float" substitutionGroup="tcs:Activity" />
+  <xs:element name="Window.Move" type="gui:Window.Move" substitutionGroup="tcs:Activity" />
+  <xs:element name="Window.Resize" type="gui:Window.Resize" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                   Enumerations
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:simpleType name="MouseButton">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Left" />
+      <xs:enumeration value="Right" />
+      <xs:enumeration value="DoubleLeft" />
+      <xs:enumeration value="DoubleRight" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CoordinateType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Absolute" />
+      <xs:enumeration value="Relative" />
+      <xs:enumeration value="Percentage" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ToggleState">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="null" />
+      <xs:enumeration value="true" />
+      <xs:enumeration value="false" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <xs:simpleType name="JpegQualityType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Low">
+      </xs:enumeration>
+      <xs:enumeration value="Medium">
+      </xs:enumeration>
+      <xs:enumeration value="High">
+      </xs:enumeration>
+      <xs:enumeration value="ExtraHigh">
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Abstract Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="ToggleStateValue" mixed="true">
+    <xs:simpleContent>
+      <xs:restriction base="tcs:Value">
+        <xs:simpleType>
+          <xs:restriction base="gui:ToggleState" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="ControlActivity">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="ControlID" type="xs:token" use="required" />
+        <xs:attribute name="Timeout" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="ControlValue" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Value">
+        <xs:attribute name="ControlID" type="xs:token" use="required" />
+        <xs:attribute name="Timeout" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="StringValue" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="BoolValue" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IntegerValue" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DoubleValue" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ControlToggleStateValue" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                   Simple Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Complex Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="PointCoordinate">
+    <xs:simpleContent>
+      <xs:extension base="xs:double">
+        <xs:attribute name="Type" type="gui:CoordinateType" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="ScreenPoint">
+    <xs:sequence>
+      <xs:element name="XCoordinate" type="gui:PointCoordinate" minOccurs="0" maxOccurs="1" />
+      <xs:element name="YCoordinate" type="gui:PointCoordinate" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="SetDefaultJpegQuality">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="JpegQuality" type="gui:JpegQualityType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Control Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="Control.Type">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.Name">
+    <xs:complexContent>
+      <xs:restriction base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsEnabled">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsAvailable">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsVisible">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsHorizontal">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsVertical">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsContentElement">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.IsControlElement">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.AutomationID">
+    <xs:complexContent>
+      <xs:restriction base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.ClassName">
+    <xs:complexContent>
+      <xs:restriction base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.AccessKey">
+    <xs:complexContent>
+      <xs:restriction base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="Control.Reset">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.WaitForAvailable">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.WaitForUnavailable">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.WaitForDisabled">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.WaitForEnabled">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.WaitForVisible">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.WaitForInvisible">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+
+
+  <xs:complexType name="Control.TakeSnapshot">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="ImageFile" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="JpegQuality" type="gui:JpegQualityType" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.ClickWithMouse">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="XCoordinate" type="gui:PointCoordinate" minOccurs="0" maxOccurs="1" />
+          <xs:element name="YCoordinate" type="gui:PointCoordinate" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="MouseButton" type="gui:MouseButton" use="optional" />
+        <xs:attribute name="CheckVisible" type="tcs:Boolean" use="optional" />
+        <xs:attribute name="CheckEnabled" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.MoveWithMouse">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="StartPoint" type="gui:ScreenPoint" minOccurs="0" maxOccurs="1" />
+          <xs:element name="EndPoint" type="gui:ScreenPoint" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="MouseButton" type="gui:MouseButton" use="optional" />
+        <xs:attribute name="CheckVisible" type="tcs:Boolean" use="optional" />
+        <xs:attribute name="CheckEnabled" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Control.BringToFront">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="CheckEnabled" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Button Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Button.Click">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+      
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Button.Toggle">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DesiredState" type="tcs:Boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Button.State">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlToggleStateValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              Calendar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Calendar.Scroll">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Horizontal" type="xs:double" />
+          <xs:element name="Vertical" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Calendar.FindItem">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Row" type="tcs:Integer" />
+          <xs:element name="Column" type="tcs:Integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              CheckBox Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="CheckBox.IsChecked">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CheckBox.State">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlToggleStateValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CheckBox.Check">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CheckBox.Uncheck">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              ComboBox Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="ComboBox.Value">
+    <xs:complexContent>
+      <xs:restriction base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.IsSelectionRequired">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.CanSelectMultiple">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.IsExpanded">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.IsCollapsed">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.Expand">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.Collapse">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox.SetText">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              Custom Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              DataGrid Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="DataGrid.RowCount">
+    <xs:complexContent>
+      <xs:restriction base="gui:IntegerValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataGrid.ColumnCount">
+    <xs:complexContent>
+      <xs:restriction base="gui:IntegerValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              DataItem Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="DataItem.EnterText">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataItem.Select">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DeselectOthers" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataItem.Deselect">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataItem.Row">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataItem.Column">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataItem.IsSelected">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              Document Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Document.Scroll">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Horizontal" type="xs:double" />
+          <xs:element name="Vertical" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Document.Text">
+    <xs:complexContent>
+      <xs:extension base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Edit Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Edit.EnterText">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="Value" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Edit.Text">
+    <xs:complexContent>
+      <xs:extension base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Group Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Header Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              HeaderItem Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="HeaderItem.Click">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+       
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              Hyperlink Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Hyperlink.Launch">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">    
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Image Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 List Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="List.Scroll">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Horizontal" type="tcs:Integer" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Vertical" type="tcs:Integer" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              ListItem Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="ListItem.Click">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">       
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ListItem.Select">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DeselectOthers" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ListItem.Deselect">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ListItem.EnterText">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ListItem.IsSelected">
+    <xs:complexContent>
+      <xs:extension base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ListItem.Text">
+    <xs:complexContent>
+      <xs:extension base="gui:StringValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Menu Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               MenuBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              MenuItem Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="MenuItem.Click">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.Toggle">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DesiredState" type="tcs:Boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.Deselect">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.Expand">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.Collapse">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.IsSelected">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.IsExpanded">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.IsCollapsed">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.IsLeafNode">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.IsToggledOn">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem.IsToggledOff">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Pane Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                             ProgressBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="ProgressBar.SetValue">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProgressBar.SetPercentage">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProgressBar.Minimum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProgressBar.Maximum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProgressBar.Value">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProgressBar.Percentage">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                             RadioButton Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="RadioButton.Select">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RadioButton.IsSelected">
+    <xs:complexContent>
+      <xs:extension base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              ScrollBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="ScrollBar.SetValue">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ScrollBar.Minimum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ScrollBar.Maximum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ScrollBar.Value">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              SemanticZoom Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="SemanticZoom.Toggle">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DesiredState" type="tcs:Boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SemanticZoom.State">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlToggleStateValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              AppBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              Separator Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Slider Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Slider.SetValue">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Slider.Toggle">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DesiredState" type="tcs:Boolean" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Slider.Minimum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Slider.Maximum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Slider.Value">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Slider.State">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlToggleStateValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Spinner Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Spinner.SetValue">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Spinner.Minimum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Spinner.Maximum">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Spinner.Value">
+    <xs:complexContent>
+      <xs:extension base="gui:DoubleValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                             SplitButton Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                              StatusBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="StatusBar.FindItem">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Row" type="tcs:Integer" />
+          <xs:element name="Column" type="tcs:Integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Tab Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Tab.Scroll">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Horizontal" type="xs:double" />
+          <xs:element name="Vertical" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               TabItem Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="TabItem.Select">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TabItem.IsSelected">
+    <xs:complexContent>
+      <xs:extension base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Table Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Table.FindItem">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Row" type="tcs:Integer" />
+          <xs:element name="Column" type="tcs:Integer" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Text Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Thumb Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               TitleBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                             ToggleButton Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="ToggleButton.State">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               ToolBar Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               ToolTip Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                 Tree Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Tree.Scroll">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Horizontal" type="tcs:Integer" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Vertical" type="tcs:Integer" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               TreeItem Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="TreeItem.Select">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="DeselectOthers" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.Click">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:attribute name="SeparateThread" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.ScrollUntilVisible">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.Expand">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.Collapse">
+    <xs:complexContent>
+      <xs:restriction base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.IsSelected">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.IsExpanded">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.IsCollapsed">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem.IsLeafNode">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Window Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+
+  <xs:complexType name="Window.Move">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="XCoordinate" type="xs:double" minOccurs="0" maxOccurs="1" />
+          <xs:element name="YCoordinate" type="xs:double" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.Resize">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity">
+        <xs:sequence>
+          <xs:element name="Width" type="xs:double" minOccurs="0" maxOccurs="1" />
+          <xs:element name="Height" type="xs:double" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.Close">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.Minimize">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.Maximize">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.Float">
+    <xs:complexContent>
+      <xs:extension base="gui:ControlActivity" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.CanMinimize">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.CanMaximize">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsModal">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsTopmost">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsReadyForUserInteraction">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsBlockedByModalWindow">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsMinimized">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsMaximized">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.IsFloating">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.CanMove">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Window.CanResize">
+    <xs:complexContent>
+      <xs:restriction base="gui:BoolValue" />
+    </xs:complexContent>
+  </xs:complexType>
+
+
+</xs:schema>

@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://tempuri.org/RoFramework.xsd"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  xmlns:ros="http://tempuri.org/RoFramework.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      <header author="fengtao" created="2016-01-22" updated="2016-01-22">
+        RoWarlock 测试脚本框架
+        版权 著作权归属冯涛所有
+        Author: 冯涛
+        E-mail: fengtao.1314520@163.com
+        Skype/MSN: fengtao.1314520@hotmail.com
+        Gmail: fengtao.1314520@gmail.com
+      </header>
+    </xs:documentation>
+  </xs:annotation>
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Root Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="TestDefinition" type="ros:TestDefinition" />
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                Abstract Elements
+  ******************************************************************************
+  ==============================================================================
+  -->
+  <xs:element name="Activity" type="ros:Activity" abstract="true" />
+  <xs:element name="Value" type="ros:Value" abstract="true" />
+
+  <xs:element name="header" id="header">
+    <xs:annotation>
+      <xs:documentation>
+        测试详细信息，包含作者 创建时间 升级时间
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="author" type="xs:token" use="required" />
+          <xs:attribute name="created" type="xs:date" use="required" />
+          <xs:attribute name="updated" type="xs:date" use="required" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                Abstract complexType
+                                控件操作归属Activity
+                                控件值归属Value
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="Value" abstract="true" mixed="true">
+    <xs:anyAttribute />
+  </xs:complexType>
+
+  <xs:complexType name="Activity" abstract="true">
+    <xs:attribute name="TreatErrorsAsWarnings" type="ros:Boolean" use="optional" />
+    <xs:attribute name="Explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Complex Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="TestDefinition">
+    <xs:sequence>
+      <xs:element name="Annotation" type="ros:Annotation" minOccurs="1" maxOccurs="1" />
+      <xs:element name="TestConfig" type="ros:TestConfig" minOccurs="1" maxOccurs="1" />
+      <xs:element name="StartApp" type="ros:StartApp" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Tests" type="ros:Tests" minOccurs="1" maxOccurs="1" />
+      <xs:element name="CloseApp" type="ros:CloseApp" minOccurs="1" maxOccurs="1" />
+      <xs:element name="LogFunction" type="ros:LogFunction" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Annotation">
+    <xs:sequence>
+      <xs:element name="Description" type="xs:string" />
+      <xs:element name="Created" type="ros:Timestamp" />
+      <xs:element name="LastUpdated" type="ros:Timestamp" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TestConfig">
+    <xs:sequence>
+      <xs:element name="Properties" type="ros:Properties" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Imports" type="ros:Imports" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="StartApp">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="AppInfo" type="ros:AppInfo" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CloseApp">
+    <xs:attribute name="Keep" type="ros:Boolean" use="optional" />
+  </xs:complexType>
+
+  <xs:complexType name="LogFunction">
+    <xs:sequence minOccurs="1" maxOccurs="unbounded">
+      <xs:element name="LogFilePath" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Documentation Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="Timestamp">
+    <xs:attribute name="Author" type="ros:Username" />
+    <xs:attribute name="Date" type="ros:Date" />
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Property Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="Properties">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Property" type="ros:Property" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Property">
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Value" type="xs:anySimpleType" minOccurs="1" maxOccurs="1" />
+      <xs:element name="Description" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="ros:ID" />
+  </xs:complexType>
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Import Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="Imports">
+    <xs:sequence>
+      <xs:element name="ConfigurationFile" type="ros:ConfigurationFile" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="ConfigurationFile">
+    <xs:sequence>
+      <xs:element name="Path" type="xs:string" minOccurs="1" maxOccurs="1" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="ros:ID" use="required" />
+    <xs:attribute name="Type" type="ros:Type" use="required" />
+  </xs:complexType>
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   StartApp/CloseApp Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <xs:complexType name="AppInfo">
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="ExecuePath" type="xs:string" />
+      <xs:element name="BaseWindowsBits" type="ros:Bits" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Version" type="xs:string" />
+      <xs:element name="Parameters" type="ros:Parameters" />
+    </xs:sequence>
+    <xs:attribute name="AppName" type="ros:ID" />
+  </xs:complexType>
+
+  <xs:complexType name="Parameters">
+    <xs:sequence>
+      <xs:element name="Parameter" type="ros:Parameter" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Parameter">
+    <xs:simpleContent>
+      <xs:extension base="xs:string" />
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="Bits">
+    <xs:attribute name="Bits" type="ros:Bit" use="optional" />
+  </xs:complexType>
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Test Types 
+                                   New Version
+                                   TODO 4-27 Update
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="Tests">
+    <xs:annotation>
+      <xs:documentation>
+        支持的测试类型
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="1" maxOccurs="unbounded">
+      <xs:element ref="ros:TestCase" minOccurs="0" maxOccurs="unbounded" />
+    </xs:choice>
+  </xs:complexType>
+
+
+  <xs:element name="TestCase" type="ros:TestCase">
+    <xs:annotation>
+      <xs:documentation>
+        普通测试
+        测试用例
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+
+  <xs:element name="MacroReference" type="ros:MacroReference" substitutionGroup="ros:Activity">
+    <xs:annotation>
+      <xs:documentation>
+        引用宏
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+
+  <xs:complexType name="TestCase">
+    <xs:annotation>
+      <xs:documentation>
+        普通测试用例步骤，自上而下的执行步骤，允许引用宏步骤(Macros)
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Annotation" type="ros:Annotation" />
+      <xs:element name="TestSteps" type="ros:TestSteps" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="ros:ID" use="required" />
+  </xs:complexType>
+
+
+  <xs:complexType name="TestSteps">
+    <xs:sequence>
+      <xs:element ref="ros:Activity" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="MacroReference">
+
+    <xs:complexContent>
+      <xs:extension base="ros:Activity">
+        <xs:attribute name="MacroID" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                Activity Elements
+                                Sleep
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <!--<xs:element name="Sleep" type="ros:Sleep" substitutionGroup="ros:Activity" />
+
+  <xs:complexType name="Sleep">
+    <xs:complexContent>
+      <xs:extension base="ros:Activity">
+        <xs:attribute name="Seconds" type="xs:integer" use="required" />
+        <xs:attribute name="Message" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>-->
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Value Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="StringValue" type="ros:StringValue" substitutionGroup="ros:Value" />
+
+  <xs:element name="BoolValue" type="ros:BoolValue" substitutionGroup="ros:Value" />
+
+  <xs:element name="IntegerValue" type="ros:IntegerValue" substitutionGroup="ros:Value" />
+
+  <xs:element name="FloatValue" type="ros:FloatValue" substitutionGroup="ros:Value" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   Value Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="StringValue" mixed="true">
+    <xs:simpleContent>
+      <xs:restriction base="ros:Value">
+        <xs:simpleType>
+          <xs:restriction base="xs:string" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="BoolValue" mixed="true">
+    <xs:simpleContent>
+      <xs:restriction base="ros:Value">
+        <xs:simpleType>
+          <xs:restriction base="ros:Boolean" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="IntegerValue" mixed="true">
+    <xs:simpleContent>
+      <xs:restriction base="ros:Value">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="FloatValue" mixed="true">
+    <xs:simpleContent>
+      <xs:restriction base="ros:Value">
+        <xs:simpleType>
+          <xs:restriction base="xs:float" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="PointValue">
+    <xs:complexContent>
+      <xs:extension base="ros:Value">
+        <xs:attribute name="X" use="required" />
+        <xs:attribute name="Y" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SizeValue">
+    <xs:complexContent>
+      <xs:extension base="ros:Value">
+        <xs:attribute name="Width" use="required" />
+        <xs:attribute name="Height" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                   Simple Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:simpleType name="PropertyPlaceholder">
+    <xs:restriction base="xs:token">
+      <xs:pattern value="\$\{[a-zA-Z]+([-_.a-zA-Z0-9])*[a-zA-Z0-9]*\}" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PureBoolean">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="true" />
+      <xs:enumeration value="false" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PureInteger">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="-2147483648" />
+      <xs:maxInclusive value="2147483647" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="PureFloat">
+    <xs:restriction base="xs:float">
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="ID">
+    <xs:restriction base="xs:ID">
+      <xs:pattern value="[a-zA-Z\$\{\}]+([-_.a-zA-Z0-9\$\{\}])*[a-zA-Z0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Username">
+    <xs:restriction base="xs:Name">
+      <xs:pattern value="[a-z]*" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Type">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="RoWeb" />
+      <xs:enumeration value="RoClient" />
+      <xs:enumeration value="RoMobile" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Date">
+    <xs:union memberTypes="xs:date" />
+  </xs:simpleType>
+
+  <xs:simpleType name="Boolean">
+    <xs:union memberTypes="ros:PropertyPlaceholder ros:PureBoolean" />
+  </xs:simpleType>
+
+  <xs:simpleType name="Integer">
+    <xs:union memberTypes="ros:PropertyPlaceholder ros:PureInteger" />
+  </xs:simpleType>
+
+  <xs:simpleType name="Float">
+    <xs:union memberTypes="ros:PropertyPlaceholder ros:PureFloat" />
+  </xs:simpleType>
+
+
+  <xs:simpleType name="Bit">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="32Bits" />
+      <xs:enumeration value="64Bits" />
+      <xs:enumeration value="default" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+</xs:schema>

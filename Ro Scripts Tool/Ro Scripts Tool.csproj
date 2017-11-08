@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{199F1ABB-BB76-4BB0-ADFE-899C1C162970}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ro_Scripts_Tool</RootNamespace>
+    <AssemblyName>Ro Scripts Tool</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="MTStar\Config\MacroUnit.roc">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Config\PropertiesUnit.roc">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28079,080,081,084%29_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28082,083%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28085,086,089,094,095,097,098,099%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28101,104,105,106,109,112,113,116,117%29_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28118,121,122,123,129%29_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28137,138,140%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28141,142,143%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28147,151%29_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28153,154%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28640%29_Dev.ros" />
+    <None Include="MTStar\UIMaps\Frame\FrameDept.roi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\UIMaps\Major\Index.roi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\UIMaps\Major\Login.roi" />
+    <None Include="MTStar\UIMaps\Major\ScaleView.roi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\UIMaps\ScaleView\Dept.roi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\UIMaps\ScaleView\EditScale.roi" />
+    <None Include="MTStar\UIMaps\ScaleView\FieldEdit.roi" />
+    <None Include="MTStar\UIMaps\ScaleView\NewScale.roi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sample\Ro\控件_新版.roi" />
+    <None Include="Sample\Ro\操作_新版.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sample\Ro\配置_新版.roc" />
+    <None Include="Schemas\RoAssert.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\脚本\RocFile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\RoFramework.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\RoGuiAutomation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\RoOsWindow.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\脚本\RoTciForClient.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\脚本\RoiFile.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Schemas\RoWebAutomation.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sample\Json\控件.json" />
+    <None Include="Sample\Json\操作.json" />
+    <None Include="Sample\Json\配置.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sample\自述文件.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

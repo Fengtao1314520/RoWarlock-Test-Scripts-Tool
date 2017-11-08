@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://tempuri.org/RoiFile.xsd"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  xmlns:roi="http://tempuri.org/RoiFile.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tcs="http://tempuri.org/RoFramework.xsd">
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 元素脚本ROI文件框架
+      版权 著作权归属冯涛所有
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+
+      Update 2017-8-15 正式更新最新的脚本框架
+    </xs:documentation>
+  </xs:annotation>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Imports
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  元素类型
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <!--文档开始-->
+  <xs:element name="roi" type="roi:roi" />
+  <!--虚拟元素，不适用-->
+  <xs:element name="resource" type="roi:resource" abstract="true" />
+
+  <!--超集-->
+  <xs:element name="superset" type="roi:superset"/>
+
+
+  <!--单元素-->
+  <xs:element name="sigele" type="roi:sigele" substitutionGroup="roi:resource" />
+  <!--同父元素-->
+  <xs:element name="grpele" type="roi:grpele" substitutionGroup="roi:resource" />
+  <!--复合元素-->
+  <xs:element name="cpxele" type="roi:cpxele" substitutionGroup="roi:resource" />
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  定义类型
+  ******************************************************************************
+  ==============================================================================
+  -->
+  <!--文件总头-->
+  <xs:complexType name="roi">
+    <xs:sequence>
+       <xs:element name="annotation" type="tcs:Annotation" minOccurs="1" maxOccurs="1" />
+      <xs:element name="meta" type="roi:meta" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+ 
+  
+  <!--元集-->
+  <xs:complexType name="meta">
+    <xs:sequence>
+      <xs:element ref="roi:resource" minOccurs="0" maxOccurs="unbounded" />
+      <xs:element ref="roi:superset" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--包含id,解释-->
+  <xs:complexType name="resource" abstract="true">
+    <xs:annotation>
+      <xs:documentation>
+        抽象元素，禁用!!!
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="id" type="tcs:ID" use="optional" />
+    <xs:attribute name="explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  <!--定义超集-->
+  <xs:complexType name="superset">
+    <xs:annotation>
+      <xs:documentation>
+        超集，一种纯逻辑关系
+        包含子集，子集中包含对应的各类元素
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="subset" type="roi:subset" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  <!--定义子集-->
+  <xs:complexType name="subset">
+    <xs:annotation>
+      <xs:documentation>
+        子集，一种纯逻辑关系
+        包含单元素，同父元素，复合元素
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element ref="roi:resource" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  <!--定义单元素-->
+  <xs:complexType name="sigele">
+    <xs:annotation>
+      <xs:documentation>
+        单元素，表示为一个独有或单独元素
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="roi:roitype" />
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--定义同父元素-->
+  <xs:complexType name="grpele">
+    <xs:annotation>
+      <xs:documentation>
+        同父元素，表示多个共享统一父层或祖辈层的元素
+        共享一个id,locator和前缀value,不同的元素使用不同的childvalue、index值进行区分
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="roi:roitype">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="groups" type="roi:groups" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--定义复合元素-->
+  <xs:complexType name="cpxele">
+    <xs:annotation>
+      <xs:documentation>
+        复合元素，同父元素的一种派生写法
+        共享一个locator和前缀value,复合元素的子元素都拥有自己的id
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="roi:roitype">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="complexs" type="roi:complexs" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  定义包含的Element
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+
+  <!--定义roitype类型-->
+  <xs:complexType name="roitype" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="roi:resource">
+        <xs:sequence>
+          <xs:element name="valueinfo" type="roi:valueinfo" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--定义valueinfo-->
+  <xs:complexType name="valueinfo">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="locator" type="roi:loactortype" />
+        <xs:attribute name="index" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+
+  <!--定义groups-->
+  <xs:complexType name="groups">
+    <xs:sequence>
+      <xs:element name="info" type="roi:info" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--定义complexs-->
+  <xs:complexType name="complexs">
+    <xs:sequence>
+      <xs:element name="cpxchild" type="roi:cpxchild" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <!--定义info-->
+  <xs:complexType name="info">
+    <!--<xs:attribute name="id" type="tcs:ID" use="optional" />-->
+    <xs:attribute name="index" type="tcs:Integer" />
+    <xs:attribute name="childvalue" type="xs:string" />
+    <xs:attribute name="explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  <!--定义cpxchild-->
+  <xs:complexType name="cpxchild">
+    <xs:attribute name="id" type="tcs:ID" />
+    <xs:attribute name="index" type="tcs:Integer" />
+    <xs:attribute name="childvalue" type="xs:string" />
+    <xs:attribute name="explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  定义Attribute
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:simpleType name="loactortype">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Class" />
+      <xs:enumeration value="Css" />
+      <xs:enumeration value="Id" />
+      <xs:enumeration value="Name" />
+      <xs:enumeration value="XPath" />
+      <xs:enumeration value="Link" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+</xs:schema>

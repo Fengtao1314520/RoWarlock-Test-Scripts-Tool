@@ -1,0 +1,506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://tempuri.org/RoOsWindow.xsd"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  xmlns:tcs="http://tempuri.org/RoFramework.xsd"
+  xmlns:oswin="http://tempuri.org/RoOsWindow.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 测试脚本Windows操作框架
+      版权 著作权归属冯涛所有
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+    </xs:documentation>
+  </xs:annotation>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Imports
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Elements
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:element name="File.Comments" type="oswin:File.Comments" substitutionGroup="tcs:Value" />
+  <xs:element name="File.CompanyName" type="oswin:File.CompanyName" substitutionGroup="tcs:Value" />
+  <xs:element name="File.DateCreated" type="oswin:File.DateCreated" substitutionGroup="tcs:Value" />
+  <xs:element name="File.DateTimeCreated" type="oswin:File.DateTimeCreated" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Description" type="oswin:File.Description" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Exists" type="oswin:File.Exists" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Extension" type="oswin:File.Extension" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Copy" type="oswin:File.Copy" substitutionGroup="tcs:Activity" />
+  <xs:element name="File.InternalName" type="oswin:File.InternalName" substitutionGroup="tcs:Value" />
+  <xs:element name="File.IsHidden" type="oswin:File.IsHidden" substitutionGroup="tcs:Value" />
+  <xs:element name="File.LegalCopyright" type="oswin:File.LegalCopyright" substitutionGroup="tcs:Value" />
+  <xs:element name="File.IsReadOnly" type="oswin:File.IsReadOnly" substitutionGroup="tcs:Value" />
+  <xs:element name="File.LegalTrademark" type="oswin:File.LegalTrademark" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Name" type="oswin:File.Name" substitutionGroup="tcs:Value" />
+  <xs:element name="File.OriginalName" type="oswin:File.OriginalName" substitutionGroup="tcs:Value" />
+  <xs:element name="File.ProductName" type="oswin:File.ProductName" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Size" type="oswin:File.Size" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Delete" type="oswin:File.Delete" substitutionGroup="tcs:Activity" />
+  <xs:element name="File.Move" type="oswin:File.Move" substitutionGroup="tcs:Activity" />
+  <xs:element name="File.Rename" type="oswin:File.Rename" substitutionGroup="tcs:Activity" />
+  <xs:element name="File.ProductVersion" type="oswin:File.ProductVersion" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Version" type="oswin:File.Version" substitutionGroup="tcs:Value" />
+  <xs:element name="File.Text" type="oswin:File.Text" substitutionGroup="tcs:Value" />
+
+  <xs:element name="Directory.Size" type="oswin:Directory.Size" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.AvailableDiskSpace" type="oswin:Directory.AvailableDiskSpace" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.DateCreated" type="oswin:Directory.DateCreated" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.DateTimeCreated" type="oswin:Directory.DateTimeCreated" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.Exists" type="oswin:Directory.Exists" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.IsReadOnly" type="oswin:Directory.IsReadOnly" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.IsHidden" type="oswin:Directory.IsHidden" substitutionGroup="tcs:Value" />
+  <xs:element name="Directory.Delete" type="oswin:Directory.Delete" substitutionGroup="tcs:Activity" />
+  <xs:element name="Directory.Copy" type="oswin:Directory.Copy" substitutionGroup="tcs:Activity" />
+  <xs:element name="Directory.Rename" type="oswin:Directory.Rename" substitutionGroup="tcs:Activity" />
+  <xs:element name="Directory.Move" type="oswin:Directory.Move" substitutionGroup="tcs:Activity" />
+  <xs:element name="Directory.Create" type="oswin:Directory.Create" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Complex Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="VersionValue" mixed="true">
+    <xs:simpleContent>
+      <xs:restriction base="tcs:Value">
+        <xs:simpleType>
+          <xs:restriction base="oswin:VersionFormat" />
+        </xs:simpleType>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Comments">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.CompanyName">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.DateCreated">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.DateTimeCreated">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Description">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Exists">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Extension">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Copy">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseActivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:choice>
+            <xs:element name="Source" type="oswin:File" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Sources" type="oswin:FileList" minOccurs="0" maxOccurs="1" />
+          </xs:choice>
+          <xs:choice>
+            <xs:element name="DestinationFile" type="oswin:File" minOccurs="0" maxOccurs="1" />
+            <xs:element name="DestinationDirectory" type="oswin:Directory" minOccurs="0" maxOccurs="1" />
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.IsHidden">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.LegalCopyright">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.IsReadOnly">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.InternalName">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.LegalTrademark">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Name">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.OriginalName">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.ProductName">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Size">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Delete">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:choice>
+          <xs:element name="Path" type="oswin:File" minOccurs="1" maxOccurs="1" />
+          <xs:element name="Paths" type="oswin:FileList" minOccurs="1" maxOccurs="1" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Move">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseActivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:choice>
+            <xs:element name="Source" type="oswin:File" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Sources" type="oswin:FileList" minOccurs="0" maxOccurs="1" />
+          </xs:choice>
+          <xs:choice>
+            <xs:element name="DestinationFile" type="oswin:File" minOccurs="0" maxOccurs="1" />
+            <xs:element name="DestinationDirectory" type="oswin:Directory" minOccurs="0" maxOccurs="1" />
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Rename">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseActivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="Source" type="oswin:File" minOccurs="0" maxOccurs="1" />
+          <xs:element name="DestinationFile" type="oswin:File" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.ProductVersion">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Version">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="File.Text">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+        <xs:attribute name="Filter" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.DateCreated">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.DateTimeCreated">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Exists">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Size">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.AvailableDiskSpace">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.IsReadOnly">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.IsHidden">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.NumberOfFiles">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseValueType">
+        <xs:attribute name="SearchOption" type="oswin:SearchOption" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Rename">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseActivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="Source" type="oswin:Directory" minOccurs="1" maxOccurs="1" />
+          <xs:element name="DesiredName" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Delete">
+    <xs:complexContent>
+      <xs:extension base="oswin:DirectoryDeleteType">
+        <xs:choice>
+          <xs:element name="Path" type="oswin:Directory" minOccurs="1" maxOccurs="1" />
+          <xs:element name="Paths" type="oswin:Directories" minOccurs="1" maxOccurs="1" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Move">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseActivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:choice>
+            <xs:element name="Source" type="oswin:Directory" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Sources" type="oswin:Directories" minOccurs="0" maxOccurs="1" />
+          </xs:choice>
+          <xs:element name="Destination" type="oswin:Directory" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Create">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:choice>
+          <xs:element name="Path" type="oswin:Directory" minOccurs="1" maxOccurs="1" />
+          <xs:element name="Paths" type="oswin:Directories" minOccurs="1" maxOccurs="1" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directory.Copy">
+    <xs:complexContent>
+      <xs:extension base="oswin:IOBaseActivityType">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:choice>
+            <xs:element name="Source" type="oswin:Directory" minOccurs="0" maxOccurs="1" />
+            <xs:element name="Sources" type="oswin:Directories" minOccurs="0" maxOccurs="1" />
+          </xs:choice>
+          <xs:element name="Destination" type="oswin:Directory" minOccurs="0" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Abstract Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="IOBaseActivityType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="Overwrite" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IOBaseValueType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Value">
+        <xs:attribute name="Path" type="xs:string" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DirectoryDeleteType" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="TimeOut" type="tcs:Integer" use="optional" />
+        <xs:attribute name="Frequency" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                   File Types
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:complexType name="FileList">
+    <xs:sequence>
+      <xs:element name="File" type="oswin:File" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="File">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="Directories">
+    <xs:sequence>
+      <xs:element name="Directory" type="oswin:Directory" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Directory">
+    <xs:simpleContent>
+      <xs:extension base="xs:anyURI">
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="Paths">
+    <xs:sequence minOccurs="1" maxOccurs="1">
+      <xs:element name="Path" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--
+ ==============================================================================
+  ******************************************************************************
+                                   Enumerations
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:simpleType name="VersionFormat">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="SearchOption">
+
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TopDirectoryOnly" />
+      <xs:enumeration value="AllDirectories" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

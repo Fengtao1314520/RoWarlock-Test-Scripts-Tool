@@ -1,0 +1,404 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://tempuri.org/RoTciForClient.xsd"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  xmlns:clientinfo="http://tempuri.org/RoTciForClient.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:tcs="http://tempuri.org/RoFramework.xsd">
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 测试脚本Client Tci文件框架
+      版权 著作权归属冯涛所有
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+    </xs:documentation>
+  </xs:annotation>
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Imports
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  元素类型
+  ******************************************************************************
+  ==============================================================================
+  -->
+  <xs:element name="ElementInfo" type="clientinfo:ElementInfo" />
+  <xs:element name="Resource" type="clientinfo:Resource" abstract="true" />
+
+  <!--控件元素-->
+  <xs:element name="Window" type="clientinfo:Window" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Button" type="clientinfo:Button" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Calendar" type="clientinfo:Calendar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="CheckBox" type="clientinfo:CheckBox" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="ComboBox" type="clientinfo:ComboBox" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Custom" type="clientinfo:Custom" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="DataGrid" type="clientinfo:DataGrid" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="DataItem" type="clientinfo:DataItem" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Document" type="clientinfo:Document" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Edit" type="clientinfo:Edit" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Group" type="clientinfo:Group" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Header" type="clientinfo:Header" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="HeaderItem" type="clientinfo:HeaderItem" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Hyperlink" type="clientinfo:Hyperlink" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Image" type="clientinfo:Image" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="List" type="clientinfo:List" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="ListItem" type="clientinfo:ListItem" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Menu" type="clientinfo:Menu" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="MenuBar" type="clientinfo:MenuBar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="MenuItem" type="clientinfo:MenuItem" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Pane" type="clientinfo:Pane" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="ProgressBar" type="clientinfo:ProgressBar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="RadioButton" type="clientinfo:RadioButton" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="ScrollBar" type="clientinfo:ScrollBar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Separator" type="clientinfo:Separator" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Slider" type="clientinfo:Slider" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Spinner" type="clientinfo:Spinner" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="SplitButton" type="clientinfo:SplitButton" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="StatusBar" type="clientinfo:StatusBar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Tab" type="clientinfo:Tab" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="TabItem" type="clientinfo:TabItem" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Table" type="clientinfo:Table" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Text" type="clientinfo:Text" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Thumb" type="clientinfo:Thumb" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="TitleBar" type="clientinfo:TitleBar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="ToolBar" type="clientinfo:ToolBar" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="ToolTip" type="clientinfo:ToolTip" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="Tree" type="clientinfo:Tree" substitutionGroup="clientinfo:Resource" />
+  <xs:element name="TreeItem" type="clientinfo:TreeItem" substitutionGroup="clientinfo:Resource" />
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  定义类型
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+
+  <xs:complexType name="ElementInfo">
+    <xs:sequence>
+      <xs:element name="Resources" type="clientinfo:Resources" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Resources">
+    <xs:sequence>
+      <xs:element ref="clientinfo:Resource" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Resource" abstract="true">
+    <xs:attribute name="ID" type="tcs:ID" />
+  </xs:complexType>
+
+  <xs:complexType name="GUIControl" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:Resource">
+        <xs:sequence>
+          <xs:element name="ReferenceContainer" type="clientinfo:ReferenceContainer" minOccurs="1" maxOccurs="1" />
+          <xs:element name="SearchProperties" type="clientinfo:SearchProperties" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="Index" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ReferenceContainer">
+    <xs:simpleContent>
+      <xs:extension base="xs:token">
+        <xs:attribute name="Scope" type="clientinfo:ScopeType" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="ScopeType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Children" />
+      <xs:enumeration value="Descendants" />
+      <xs:enumeration value="ChildrenByDescendants" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="SearchProperties">
+    <xs:sequence>
+      <xs:element name="SearchProperty" type="clientinfo:SearchProperty" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="SearchProperty">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="Name" type="clientinfo:SearchPropertyType" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:simpleType name="SearchPropertyType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="ClassName" />
+      <xs:enumeration value="AutomationId" />
+      <xs:enumeration value="Name" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <!--控件元素-->
+  <xs:complexType name="Window">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Button">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Calendar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="CheckBox">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ComboBox">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Custom">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataGrid">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="DataItem">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Document">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Edit">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Group">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Header">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="HeaderItem">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Hyperlink">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Image">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="List">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ListItem">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Menu">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuBar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="MenuItem">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Pane">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ProgressBar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="RadioButton">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ScrollBar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Separator">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Slider">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Spinner">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="SplitButton">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="StatusBar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Tab">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TabItem">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Table">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Text">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Thumb">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TitleBar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ToolBar">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="ToolTip">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Tree">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="TreeItem">
+    <xs:complexContent>
+      <xs:extension base="clientinfo:GUIControl" />
+    </xs:complexContent>
+  </xs:complexType>
+
+
+</xs:schema>

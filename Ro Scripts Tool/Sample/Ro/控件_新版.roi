@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<roi:roi xmlns:roi="http://tempuri.org/RoiFile.xsd"
+         xmlns:tcs="http://tempuri.org/RoFramework.xsd">
+<!--******************************************************************************
+    TODO 2017-06-05更新Tci文件中控件的命名规则
+    By:冯涛(Nate Ford)
+    
+    1.控件名称需要明确表达控件的作用，具有简单明了的表现形式
+    2.控件名称以'驼峰形式表达'，首字母为大写字母，允许简写形式，但不允许使用拼音。正确表达例如:FindElement
+    3.控件名称需要跟随控件形式，以"_"下划线跟随控件形式，且放置于表形式的最后，正确表达例如:FindElement_Btn
+    4.控件名称中附属的限定值跟随在名称后，以"_"+"限定值"的形式表现，正确表达例如:FindElement_Left_Btn、FindElement_1_Btn等
+    
+    控件形式为:
+    按钮/Button ——> _Btn
+    显示字符/Label ——> _Lbl
+    文本框/Text ——> _Text
+    复选项/RadioBoxButton ——> _Rbn
+    勾选项/CheckBoxButton ——> _Cbn
+    列表/Table ——> _Tbl
+    单行或单列数据/List  ——> _Lst
+    
+    Web特有的:
+    IFrame ——> _Frm
+    ******************************************************************************-->
+  <roi:annotation>
+    <tcs:Description>
+      版权、著作权归属冯涛所有
+      基于Apache-2.0开源协议，授权给其他人员使用。如需修改Roi文件对应框架文件，需在被修改文件中，对本著作权人进行描述和引申
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+
+      对整个测试元素文件进行描述详情
+    </tcs:Description>
+    <tcs:Created tcs:Author="nate" tcs:Date="2017-08-16" />
+    <tcs:LastUpdated tcs:Author="nate" tcs:Date="2017-08-16" />
+  </roi:annotation>
+
+  <roi:meta>
+
+    <!--元素的写法，单元素-->
+    <roi:sigele roi:id="" roi:explain="单元素独立的元素，通过locator和value可以直接定位到本元素">
+      <roi:valueinfo roi:locator="XPath" roi:index="1"></roi:valueinfo>
+    </roi:sigele>
+
+   
+
+
+    <!--元素的写法，复合元素-->
+    <roi:cpxele roi:explain="复合元素是同父元素的派生写法，复合元素的子元素都拥有自己的id,只共享使用locator和前缀value">
+      <roi:valueinfo roi:locator="Class" roi:index=""></roi:valueinfo>
+      <roi:complexs>
+        <roi:cpxchild roi:id="" roi:childvalue="" roi:index="" />
+      </roi:complexs>
+    </roi:cpxele>
+
+
+    <!--超集，文件逻辑结构-->
+    <roi:superset roi:explain="超集，仅仅是文件逻辑结构">
+      <roi:subset roi:explain="子集，仅仅是文件逻辑结构">
+        <roi:sigele roi:id="" roi:explain="单元素">
+          <roi:valueinfo roi:locator="XPath"></roi:valueinfo>
+        </roi:sigele>
+        
+        <roi:cpxele roi:explain="复合元素">
+          <roi:valueinfo roi:locator="Class" roi:index="" />
+          <roi:complexs>
+            <roi:cpxchild roi:id="" roi:childvalue="" roi:index="" />
+          </roi:complexs>
+        </roi:cpxele>
+      </roi:subset>
+
+      <roi:subset roi:explain="子集，仅仅是文件逻辑结构">
+        <roi:sigele roi:id="" roi:explain="单元素">
+          <roi:valueinfo roi:locator="XPath"></roi:valueinfo>
+        </roi:sigele>
+       
+        <roi:cpxele roi:explain="复合元素">
+          <roi:valueinfo roi:locator="Class" roi:index="" />
+          <roi:complexs>
+            <roi:cpxchild roi:id="" roi:childvalue="" roi:index="" />
+          </roi:complexs>
+        </roi:cpxele>
+      </roi:subset>
+    </roi:superset>
+
+
+  </roi:meta>
+</roi:roi>

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema
+  targetNamespace="http://tempuri.org/RoAssert.xsd"
+  attributeFormDefault="qualified"
+  elementFormDefault="qualified"
+  xmlns:tcs="http://tempuri.org/RoFramework.xsd"
+  xmlns:assert="http://tempuri.org/RoAssert.xsd"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 测试脚本Assert操作框架
+      版权 著作权归属冯涛所有
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+    </xs:documentation>
+  </xs:annotation>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Imports
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Elements
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:element name="AreEqual" type="assert:AreEqual" substitutionGroup="tcs:Activity" />
+  <xs:element name="AreNotEqual" type="assert:AreNotEqual" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsTrue" type="assert:IsTrue" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsFalse" type="assert:IsFalse" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsGreater" type="assert:IsGreater" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsLess" type="assert:IsLess" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsGreaterOrEqual" type="assert:IsGreaterOrEqual" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsLessOrEqual" type="assert:IsLessOrEqual" substitutionGroup="tcs:Activity" />
+  <xs:element name="IsSubstring" type="assert:IsSubstring" substitutionGroup="tcs:Activity" />
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                   Enumerations
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Abstract Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="Assert" abstract="true">
+
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                   Simple Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Complex Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="AreEqual">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="AreNotEqual">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsTrue">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsFalse">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsGreater">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsLess">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsGreaterOrEqual">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsLessOrEqual">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="IsSubstring">
+    <xs:complexContent>
+      <xs:extension base="assert:Assert">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ExpectedValue" type="tcs:Value" />
+          <xs:element name="ActualValue" type="tcs:Value" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ros:TestDefinition xmlns:ros="http://tempuri.org/RoFramework.xsd"
+                    xmlns:web="http://tempuri.org/RoWebAutomation.xsd"
+                    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+  <!--对整个测试文件进行描述,整个Annotation相关信息会加载进入Reprot中-->
+  <ros:Annotation>
+    <ros:Description>
+      版权、著作权归属冯涛所有
+      基于Apache-2.0开源协议，授权给其他人员使用。如需修改Ros文件对应框架文件，需在被修改文件中，对本著作权人进行描述和引申
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+
+      对整个测试脚本进行描述详情
+    </ros:Description>
+    <ros:Created ros:Author="nate" ros:Date="2017-08-16" />
+    <ros:LastUpdated ros:Author="nate" ros:Date="2017-08-16" />
+  </ros:Annotation>
+
+  <!--测试设置-->
+  <ros:TestConfig>
+
+    <!--脚本使用参数设置，参数可以设置多个-->
+    <ros:Properties>
+      <!--对参数赋予唯一的Id值-->
+      <ros:Property ros:ID="Username">
+        <!--参数值，参数值唯一-->
+        <ros:Value>admin</ros:Value>
+        <!--参数描述-->
+        <ros:Description>用户名</ros:Description>
+      </ros:Property>
+
+      <ros:Property ros:ID="Path">
+        <ros:Value>C://Windows</ros:Value>
+        <ros:Description></ros:Description>
+      </ros:Property>
+
+    </ros:Properties>
+
+    <!--Tci文件引入，支持带入参数-->
+    <ros:Imports>
+      <ros:ConfigurationFile ros:ID="A" ros:Type="RoWeb">
+        <ros:Path>${参数1}\${参数2}\A.tci</ros:Path>
+      </ros:ConfigurationFile>
+      <ros:ConfigurationFile ros:ID="B" ros:Type="RoClient">
+        <ros:Path>${Path}\B.tci</ros:Path>
+      </ros:ConfigurationFile>
+      <ros:ConfigurationFile ros:ID="C" ros:Type="RoMobile">
+        <ros:Path>C.tci</ros:Path>
+      </ros:ConfigurationFile>
+    </ros:Imports>
+
+  </ros:TestConfig>
+
+  <!--程序驱动配置-->
+  <ros:StartApp>
+    <!--测试软件名词，与启动程序节点一致-->
+    <ros:AppInfo ros:AppName="Chrome">
+      <ros:ExecuePath>C://Browser</ros:ExecuePath>
+      <!--Windows 位数-->
+      <ros:BaseWindowsBits ros:Bits="32Bits" />
+      <!--版本号，注意，版本号一定要定义-->
+      <ros:Version></ros:Version>
+      <!--程序追加参数-->
+      <ros:Parameters>
+        <ros:Parameter>/css</ros:Parameter>
+        <ros:Parameter></ros:Parameter>
+      </ros:Parameters>
+    </ros:AppInfo>
+  </ros:StartApp>
+
+
+  <!--测试正文-->
+  <ros:Tests>
+
+    <!--测试步骤，允许多个TestCase-->
+    <ros:TestCase ros:ID="WebControl">
+      <!--测试用例描述-->
+      <ros:Annotation>
+        <ros:Description>
+          对本测试用例进行描述
+        </ros:Description>
+        <ros:Created ros:Author="fengtao" ros:Date="2016-01-22" />
+        <ros:LastUpdated ros:Author="fengtao" ros:Date="2016-01-22" />
+      </ros:Annotation>
+
+      <!--测试步骤-->
+      <ros:TestSteps>
+
+        <web:Launch.Browser ros:TreatErrorsAsWarnings="true" web:BrowserType="Chrome" web:Run64Bit="true" web:Timeout="30" web:Url="" ros:Explain="设定浏览器,和进入网址" />
+
+        <web:Alert.Accept ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="弹窗确定"/>
+        <web:Alert.Dismiss ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="弹窗取消"/>
+        <web:Alert.SendKeys ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="弹窗输入文本">
+          <web:Value></web:Value>
+        </web:Alert.SendKeys>
+
+        <web:Browser.Back ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="浏览器退后"/>
+        <web:Browser.Forward ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="浏览器前进"/>
+        <web:Browser.Stop ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="浏览器停止"/>
+        <web:Browser.Close ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="浏览器关闭"/>
+        <web:Browser.CloseTab ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="浏览器当前tab关闭"/>
+
+        <web:Browser.ExecuteScript ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="浏览器执行JS脚本">
+          <web:JavaScript></web:JavaScript>
+        </web:Browser.ExecuteScript>
+
+        <web:Browser.GoToUrl ros:TreatErrorsAsWarnings="true" web:AutoStopLoad="true" web:Timeout="30" web:Url="" ros:Explain="浏览器千万某个网址"/>
+        <web:Browser.Refresh ros:TreatErrorsAsWarnings="true" web:AutoStopLoad="true" web:Timeout="30" ros:Explain="浏览器刷新"/>
+
+        <!--更新到最新版写法-->
+        <web:Browser.SwitchFrame ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:SwitchToNew="true" web:Timeout="30" ros:Explain="浏览器切换IFrame"/>
+        <web:Browser.SwitchToTab ros:TreatErrorsAsWarnings="true" web:Timeout="30" web:TabName="" ros:Explain="浏览器切换tab"/>
+
+        <web:Browser.TakeSnapshot ros:TreatErrorsAsWarnings="true" ros:Explain="浏览器截图">
+          <web:ImageFile></web:ImageFile>
+        </web:Browser.TakeSnapshot>
+
+
+        <web:Mouse.Move ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:Timeout="30" ros:Explain="鼠标移动"/>
+        <web:Mouse.Click ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:Timeout="30" web:MouseType="ClickLeft" ros:Explain="鼠标点击"/>
+
+        <web:RoWebElement.Focus ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:SetFocus="true" web:Timeout="5" ros:Explain="焦点聚集"/>
+        <web:RoWebElement.Clear ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:Timeout="30" ros:Explain="当前控件清除文本"/>
+        <web:RoWebElement.Click ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:Timeout="30" ros:Explain="当前控件点击"/>
+
+        <web:RoWebElement.Select ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:SelectType="ByIndex" web:Timeout="30" ros:Explain="当前控件下拉选择">
+          <web:Value></web:Value>
+        </web:RoWebElement.Select>
+
+        <web:RoWebElement.SendKeys ros:TreatErrorsAsWarnings="true" web:ClearFirst="true" web:RoWebElementID="" web:Timeout="30" ros:Explain="当前控件输入文本">
+          <web:Value></web:Value>
+        </web:RoWebElement.SendKeys>
+
+        <web:Scroll.Down ros:TreatErrorsAsWarnings="true" ros:Explain="向下滚动" />
+        <web:Scroll.Up ros:TreatErrorsAsWarnings="true" ros:Explain="向上滚动" />
+
+        <web:Sleep ros:TreatErrorsAsWarnings="true" web:Message="" web:Seconds="30" ros:Explain="工具强制等待"/>
+
+        <web:Update.Select ros:TreatErrorsAsWarnings="true" web:RoWebElementID="" web:Timeout="30" ros:Explain="选择文件">
+          <web:FileValue></web:FileValue>
+        </web:Update.Select>
+
+        <web:WaitUntil.PageIsLoaded ros:TreatErrorsAsWarnings="true" web:Timeout="30" ros:Explain="等待页面载入完成"/>
+
+        <web:WaitUntil.AreEqual ros:TreatErrorsAsWarnings="true" web:IgnoreCase="true" web:Timeout="5" ros:Explain="验证是否为真">
+          <web:WaitInfo web:ExpectedValue="" web:ActualType="Browser.Title" web:RoWebElementID="" web:Name="" />
+          <web:WaitInfo web:ExpectedValue="" web:ActualType="Browser.Title" web:RoWebElementID="" web:Name="" />
+        </web:WaitUntil.AreEqual>
+        
+        <web:WaitUntil.AreNotEqual ros:TreatErrorsAsWarnings="true" web:IgnoreCase="true" web:Timeout="5" ros:Explain="验证是否为假">
+          <web:WaitInfo web:ExpectedValue="" web:ActualType="Browser.Title" web:RoWebElementID="" web:Name="" />
+          <web:WaitInfo web:ExpectedValue="" web:ActualType="Browser.Title" web:RoWebElementID="" web:Name="" />
+        </web:WaitUntil.AreNotEqual>
+
+        <web:WaitUntil.StringLength ros:TreatErrorsAsWarnings="true" web:Timeout="5" ros:Explain="验证字符串长度">
+          <web:LengthType web:RoWebElementID="" web:Length="15" web:Type="Equal" />
+        </web:WaitUntil.StringLength>
+
+        <web:WaitUntil.IsTrue ros:TreatErrorsAsWarnings="true" web:Timeout="5" ros:Explain="验证是否为True">
+          <web:ActualValue web:ActualType="RoWebElement.Displayed" web:RoWebElementID=""></web:ActualValue>
+        </web:WaitUntil.IsTrue>
+        
+         <web:WaitUntil.IsFalse ros:TreatErrorsAsWarnings="true" web:Timeout="5" ros:Explain="验证是否为False">
+          <web:ActualValue web:ActualType="RoWebElement.Displayed" web:RoWebElementID=""></web:ActualValue>
+        </web:WaitUntil.IsFalse>
+        <ros:MacroReference ros:MacroID="ABC.abc" ros:TreatErrorsAsWarnings="true" ros:Explain="使用宏"/>
+
+      </ros:TestSteps>
+    </ros:TestCase>
+
+  </ros:Tests>
+
+  <!--是否关闭测试驱动-->
+  <ros:CloseApp ros:Keep="true" />
+
+  <!--log处理，写入另存为Log的路径，默认情况下桌面会自动生成一份-->
+  <ros:LogFunction>
+    <ros:LogFilePath></ros:LogFilePath>
+  </ros:LogFunction>
+
+</ros:TestDefinition>

@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema targetNamespace="http://tempuri.org/RocFile.xsd"
+           attributeFormDefault="qualified"
+           elementFormDefault="qualified"
+           xmlns:roc="http://tempuri.org/RocFile.xsd"
+           xmlns:ros="http://tempuri.org/RoFramework.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 测试脚本rocIG文件框架
+      版权 著作权归属冯涛所有
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+
+      Update 2017-08-15 正式更新至新版本
+    </xs:documentation>
+  </xs:annotation>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     Imports
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  Root Elements
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <xs:element name="Config" type="roc:Config" />
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Complex Types
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:complexType name="Config">
+    <xs:sequence>
+      <xs:element name="Annotation" type="ros:Annotation" minOccurs="1" maxOccurs="1" />
+       <xs:element name="TestMode" type="roc:TestMode" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Properties" type="ros:Properties" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Languages" type="roc:Languages" minOccurs="0" maxOccurs="1" />
+      <xs:element name="Macros" type="roc:Macros" minOccurs="0" maxOccurs="1" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+                                    语言配置
+  ==============================================================================
+  -->
+  <xs:complexType name="Languages">
+    <xs:annotation>
+      <xs:documentation>
+        语言设置项目
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Language" type="roc:Language" />
+    </xs:sequence>
+  </xs:complexType>
+
+
+  <xs:complexType name="Language">
+    <xs:annotation>
+      <xs:documentation>
+        单个控件的text值 对应N个语言
+        验证方式是循环验证，只要保证一次包含/等于，即可通过
+        具体使用方法为${LanguageId.item}
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Item" type="xs:string" minOccurs="1" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="ros:ID" use="required" />
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+                                    测试模式
+  ==============================================================================
+  -->
+
+  <xs:complexType name="TestMode">
+    <xs:annotation>
+      <xs:documentation>
+        测试模式
+      </xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="SelectMode" type="roc:SelectMode" />
+    <xs:attribute name="LoopNum" type="ros:Integer" />
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+                                    操作宏配置
+  ==============================================================================
+  -->
+
+  <xs:complexType name="Macros">
+    <xs:annotation>
+      <xs:documentation>
+        操作宏
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="Macro" type="roc:Macro" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Macro">
+    <xs:annotation>
+      <xs:documentation>
+        操作宏
+        多个步骤集合为一个单一步骤被调用
+        其中包含的步骤是强制的
+        使用方式${MacroID}
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="MacroActivities" type="ros:TestSteps" />
+    </xs:sequence>
+    <xs:attribute name="ID" type="ros:ID" use="required" />
+    <xs:attribute name="Explain" type="xs:string" use="optional" />
+  </xs:complexType>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  定义Attribute
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:simpleType name="SelectMode">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Defalut" />
+      <xs:enumeration value="Iteration" />
+      <xs:enumeration value="Loop" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

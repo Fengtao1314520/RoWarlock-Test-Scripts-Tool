@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema attributeFormDefault="qualified"
+           elementFormDefault="qualified"
+           targetNamespace="http://tempuri.org/RoWebAutomation.xsd"
+           xmlns:web="http://tempuri.org/RoWebAutomation.xsd"
+           xmlns:tcs="http://tempuri.org/RoFramework.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Documentation
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+  <xs:annotation>
+    <xs:documentation>
+      RoWarlock 测试脚本Web操作框架
+      版权、著作权归属冯涛所有
+      基于Apache-2.0开源协议，授权给其他人员使用。如需修改Roi文件对应框架文件，需在被修改文件中，对本著作权人进行描述和引申
+      Author: 冯涛
+      E-mail: fengtao.1314520@163.com
+      Skype/MSN: fengtao.1314520@hotmail.com
+      Gmail: fengtao.1314520@gmail.com
+
+      Update 2017-08-15 更新至最新版本
+      Update 2017-09-19 修改了大量冗余信息
+    </xs:documentation>
+  </xs:annotation>
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                     引入
+  ******************************************************************************
+  ==============================================================================
+  -->
+  <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                                  操作
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+
+  <!--弹出操作-->
+  <xs:element name="Alert.Accept" type="web:Alert.Accept" substitutionGroup="tcs:Activity" />
+  <xs:element name="Alert.Dismiss" type="web:Alert.Dismiss" substitutionGroup="tcs:Activity" />
+  <xs:element name="Alert.SendKeys" type="web:Alert.SendKeys" substitutionGroup="tcs:Activity" />
+
+  <!--浏览器窗口操作-->
+  <xs:element name="Browser.Back" type="web:Browser.Back" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.Forward" type="web:Browser.Forward" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.Refresh" type="web:Browser.Refresh" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.Stop" type="web:Browser.Stop" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.CloseTab" type="web:Browser.CloseTab" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.GoToUrl" type="web:Browser.GoToUrl" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.Close" type="web:Browser.Close" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.ExecuteScript" type="web:Browser.ExecuteScript" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.SwitchToTab" type="web:Browser.SwitchToTab" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.SwitchFrame" type="web:Browser.SwitchFrame" substitutionGroup="tcs:Activity" />
+  <xs:element name="Browser.TakeSnapshot" type="web:Browser.TakeSnapshot" substitutionGroup="tcs:Activity" />
+
+  <!--下拉，上拉操作-->
+  <xs:element name="Scroll.Down" type="web:Scroll.Down" substitutionGroup="tcs:Activity" />
+  <xs:element name="Scroll.Up" type="web:Scroll.Up" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  启动浏览器
+  Update 2017-08-15 更改为Browser是attribute选填项目，新增PhantomJS,以及特殊的ChromeHeadless模式
+  -->
+  <xs:element name="Launch.Browser" type="web:Launch.Browser" substitutionGroup="tcs:Activity" />
+
+
+  <!--移动鼠标-->
+  <xs:element name="Mouse.Move" type="web:Mouse.Move" substitutionGroup="tcs:Activity" />
+  <xs:element name="Mouse.Click" type="web:Mouse.Click" substitutionGroup="tcs:Activity" />
+
+  <!--
+  重新开发验证方面的操作，因为预期值和实际值要区分开来，不然开发过程中，遇到的情况会特别多
+  Update 9-19新的写法
+  
+  --> 
+  <!--验证操作-->
+  <xs:element name="WaitUntil.AreEqual" type="web:WaitUntil.AreEqual" substitutionGroup="tcs:Activity" />
+  <xs:element name="WaitUntil.AreNotEqual" type="web:WaitUntil.AreNotEqual" substitutionGroup="tcs:Activity" />
+  <xs:element name="WaitUntil.IsFalse" type="web:WaitUntil.IsFalse" substitutionGroup="tcs:Activity" />
+  <xs:element name="WaitUntil.IsTrue" type="web:WaitUntil.IsTrue" substitutionGroup="tcs:Activity" />
+  <xs:element name="WaitUntil.PageIsLoaded" type="web:WaitUntil.PageIsLoaded" substitutionGroup="tcs:Activity" />
+  <xs:element name="WaitUntil.StringContains" type="web:WaitUntil.StringContains" substitutionGroup="tcs:Activity" />
+  <xs:element name="WaitUntil.StringLength" type="web:WaitUntil.StringLength" substitutionGroup="tcs:Activity" />
+  <!--元素操作-->
+  <xs:element name="RoWebElement.Clear" type="web:RoWebElement.Clear" substitutionGroup="tcs:Activity" />
+  <xs:element name="RoWebElement.Click" type="web:RoWebElement.Click" substitutionGroup="tcs:Activity" />
+  <xs:element name="RoWebElement.SendKeys" type="web:RoWebElement.SendKeys" substitutionGroup="tcs:Activity" />
+  <xs:element name="RoWebElement.Focus" type="web:RoWebElement.Focus" substitutionGroup="tcs:Activity" />
+
+  <!--下拉菜单-->
+  <xs:element name="RoWebElement.Select" type="web:RoWebElement.Select" substitutionGroup="tcs:Activity" />
+
+  <!--上传-->
+  <xs:element name="Update.Select" type="web:Update.Select" substitutionGroup="tcs:Activity" />
+
+  <!--等待-->
+  <xs:element name="Sleep" type="web:Sleep" substitutionGroup="tcs:Activity" />
+
+
+  <!--
+  ==============================================================================
+  ******************************************************************************
+                                  Abstract/ComplexType Types
+      complexType 元素定义复杂类型。复杂类型的元素是包含其他元素和/或属性的 XML 元素
+      定义类型
+  ******************************************************************************
+  ==============================================================================
+  -->
+
+
+  <xs:complexType name="ActualValue">
+    <xs:attribute name="RoWebElementID" type="xs:token" />
+    <xs:attribute name="ActualType" type="web:ActualType" />
+    <xs:attribute name="Name" type="xs:string" use="optional" />
+  </xs:complexType>
+
+
+  
+  <xs:complexType name="LaunchActivity" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="Url" type="xs:anyURI" use="optional" />
+        <xs:attribute name="Timeout" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WebActivity" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="RoWebElementID" type="xs:token" use="required" />
+        <xs:attribute name="Timeout" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WebNoIdActivity" abstract="true">
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="Timeout" type="tcs:Integer" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--################
+Alert
+###############-->
+  <xs:complexType name="Alert.Accept">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          alert确定
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Alert.Dismiss">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          alert取消
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Alert.SendKeys">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          Alert输入
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence>
+          <xs:element name="Value" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--################
+Browser
+###############-->
+  <xs:complexType name="Browser.Stop">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          页面停止刷新
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.Back">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          页面后退
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.Close">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          关闭浏览器
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.CloseTab">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          关闭标签页
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.ExecuteScript">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          执行JavaScript代码
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:choice>
+          <xs:element name="JavaScript" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.Forward">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          页面前进
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.GoToUrl">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          页面载入某网址
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:attribute name="Url" type="xs:string" use="required" />
+        <xs:attribute name="AutoStopLoad" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.Refresh">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          页面刷新
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:attribute name="AutoStopLoad" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.SwitchToTab">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          切换标签页
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:attribute name="TabName" type="xs:string" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.SwitchFrame">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          切换iFrame
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+        <xs:attribute name="SwitchToNew" type="tcs:Boolean" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Browser.TakeSnapshot">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          页面截图
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:sequence>
+          <xs:element name="ImageFile" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--################
+Launch
+
+###############-->
+
+
+  <xs:complexType name="Launch.Browser">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          启动浏览器
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:LaunchActivity">
+        <xs:attribute name="BrowserType" type="web:BrowserType" />
+        <xs:attribute name="Run64Bit" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--################
+Scroll
+###############-->
+  <xs:complexType name="Scroll.Up">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          向上滚动到顶
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Scroll.Down">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          向下滚动到底
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--################
+Mouse
+###############-->
+  <xs:complexType name="Mouse.Move">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          鼠标移动
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="Mouse.Click">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-26" updated="2017-04-26">
+          鼠标点击操作
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+        <xs:attribute name="MouseType" type="web:MouseType" use="required" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--################
+WebElement
+###############-->
+  <xs:complexType name="RoWebElement.Clear">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          Input/文本框清除操作
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RoWebElement.Click">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          点击操作
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RoWebElement.Focus">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          给定或解散焦点
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+        <xs:attribute name="SetFocus" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RoWebElement.SendKeys">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          Input/文本框输入
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="Value" type="xs:string" minOccurs="1" maxOccurs="1" />
+        </xs:sequence>
+        <xs:attribute name="ClearFirst" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="RoWebElement.Select">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          下拉框选择
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="Value" type="xs:string" minOccurs="1" maxOccurs="1">
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="SelectType" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="ByIndex" />
+              <xs:enumeration value="ByValue" />
+              <xs:enumeration value="ByText" />
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <!--################
+WaitUntil
+###############-->
+  <xs:complexType name="WaitUntil.AreEqual">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证是否相等
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="WaitInfo" type="web:AreInfo"  minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="IgnoreCase" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WaitUntil.AreNotEqual">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证是否不等
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="WaitInfo" type="web:AreInfo" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="IgnoreCase" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WaitUntil.IsFalse">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证是否为假
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ActualValue" type="web:ActualValue" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WaitUntil.IsTrue">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证是否为真
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="ActualValue" type="web:ActualValue" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WaitUntil.PageIsLoaded">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证页面是否已载入完成
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WaitUntil.StringLength">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证字符串长度
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="LengthType" type="web:LengthType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="WaitUntil.StringContains">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          验证字符串包含
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebNoIdActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="WaitInfo" type="web:AreInfo" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="IgnoreCase" type="tcs:Boolean" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               Value Types
+                               值类型
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  
+
+  <!--长度验证-->
+  <xs:complexType name="LengthType">
+    <xs:attribute name="Length" type="tcs:Integer" use="required" />
+    <xs:attribute name="RoWebElementID" type="xs:token" />
+    <xs:attribute name="Type" use="required">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Equal" />
+          <xs:enumeration value="Longer" />
+          <xs:enumeration value="Lower" />
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:complexType>
+
+  <!--上传-->
+  <xs:complexType name="Update.Select">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          上传文件
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="web:WebActivity">
+        <xs:sequence minOccurs="1" maxOccurs="1">
+          <xs:element name="FileValue" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
+  <xs:complexType name="Sleep">
+    <xs:annotation>
+      <xs:documentation>
+        <tcs:header author="fengtao" created="2017-04-17" updated="2017-04-17">
+          冻结、等待时间
+        </tcs:header>
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="tcs:Activity">
+        <xs:attribute name="Seconds" type="tcs:Integer" use="required" />
+        <xs:attribute name="Message" type="xs:string" use="optional" />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
+  <xs:complexType name="AreInfo">
+    <xs:attribute name="ExpectedValue" type="xs:string" />
+    <xs:attribute name="ActualType" type="web:ActualType"/>
+    <xs:attribute name="Name" type="xs:string" use="optional" />
+    <xs:attribute name="RoWebElementID" type="xs:token" />
+  </xs:complexType>
+  
+
+
+  <!--
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+                               SimpleType
+                               简单类型
+  ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+  -->
+  <!--鼠标操作类型-->
+  <xs:simpleType name="MouseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ClickLeft" />
+      <xs:enumeration value="ClickRight" />
+      <xs:enumeration value="DoubleLeft" />
+      <xs:enumeration value="DoubleRight" />
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--浏览器-->
+  <xs:simpleType name="BrowserType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Chrome" />
+      <xs:enumeration value="Firefox" />
+      <xs:enumeration value="InternetExplorer" />
+      <xs:enumeration value="PhantomJS" />
+      <xs:enumeration value="ChromeHeadless" />
+    </xs:restriction>
+  </xs:simpleType>
+
+
+  <!--实际值类型-->
+  <xs:simpleType name="ActualType">
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="Browser.IsPageLoaded" />
+      <xs:enumeration value="Browser.Title" />
+      <xs:enumeration value="Browser.Url" />
+      <xs:enumeration value="RoWebElement.Displayed" />
+      <xs:enumeration value="RoWebElement.Enabled" />
+      <xs:enumeration value="RoWebElement.Selected" />
+      <xs:enumeration value="RoWebElement.Text" />
+      <xs:enumeration value="RoWebElement.GetAttribute" />
+    </xs:restriction>
+  </xs:simpleType>
+
+</xs:schema>
