@@ -44,7 +44,7 @@
     <!--Tci文件引入，支持带入参数-->
     <ros:Imports>
       <ros:ConfigurationFile ros:ID="A" ros:Type="RoWeb">
-        <ros:Path>${参数1}\${参数2}\A.tci</ros:Path>
+        <ros:Path>${参数1}\${参数2}\A.roi</ros:Path>
       </ros:ConfigurationFile>
       <ros:ConfigurationFile ros:ID="B" ros:Type="RoClient">
         <ros:Path>${Path}\B.tci</ros:Path>
@@ -169,7 +169,6 @@
           <web:ActualValue web:ActualType="RoWebElement.Displayed" web:RoWebElementID=""></web:ActualValue>
         </web:WaitUntil.IsFalse>
         <ros:MacroReference ros:MacroID="ABC.abc" ros:TreatErrorsAsWarnings="true" ros:Explain="使用宏"/>
-
       </ros:TestSteps>
     </ros:TestCase>
 
