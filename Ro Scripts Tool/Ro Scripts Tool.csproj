@@ -58,9 +58,15 @@
     </None>
     <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28153,154%29_Dev.ros" />
     <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28640%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28753,765,810,811,812,865%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28886,929%29_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="MTStar\UIMaps\Frame\FrameDept.roi">
       <SubType>Designer</SubType>
     </None>
+    <None Include="MTStar\UIMaps\Major\Export.roi" />
+    <None Include="MTStar\UIMaps\Major\Import.roi" />
     <None Include="MTStar\UIMaps\Major\Index.roi">
       <SubType>Designer</SubType>
     </None>
