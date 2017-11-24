@@ -40,31 +40,35 @@
     <None Include="MTStar\Config\PropertiesUnit.roc">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28079,080,081,084%29_Dev.ros">
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28690,691,529,63%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28079,080,081,084%29_Dev.ros">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28082,083%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28085,086,089,094,095,097,098,099%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28101,104,105,106,109,112,113,116,117%29_Dev.ros">
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28082,083%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28085,086,089,094,095,097,098,099%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28101,104,105,106,109,112,113,116,117%29_Dev.ros">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28118,121,122,123,129%29_Dev.ros">
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28118,121,122,123,129%29_Dev.ros">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28137,138,140%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28141,142,143%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28147,151%29_Dev.ros">
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28137,138,140%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28141,142,143%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28147,151%29_Dev.ros">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28153,154%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28640%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28753,765,810,811,812,865%29_Dev.ros" />
-    <None Include="MTStar\Scripts\电子秤管理\通用_基础\MTStar_TC%28886,929%29_Dev.ros">
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28153,154%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28640%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28753,765,810,811,812,865%29_Dev.ros" />
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28886,929%29_Dev.ros">
       <SubType>Designer</SubType>
     </None>
+    <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28996%29_Dev.ros" />
+    <None Include="MTStar\Scripts\部门管理\MTStar_TC_Dept%28Include_All%29_Dev.ros" />
     <None Include="MTStar\UIMaps\Frame\FrameDept.roi">
       <SubType>Designer</SubType>
     </None>
+    <None Include="MTStar\UIMaps\Major\BasicConfig.roi" />
     <None Include="MTStar\UIMaps\Major\Export.roi" />
     <None Include="MTStar\UIMaps\Major\Import.roi" />
     <None Include="MTStar\UIMaps\Major\Index.roi">
@@ -116,6 +120,15 @@
     <None Include="Sample\Json\配置.json" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28532,535%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28536,538%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28530,633%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28533,534%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28631,632%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%281092,1093%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28537,529,540%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28961,962%29_Dev.roi" />
+    <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28528,531%29_Dev.roi" />
     <Content Include="Sample\自述文件.txt" />
   </ItemGroup>
   <ItemGroup />
