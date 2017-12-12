@@ -68,6 +68,7 @@
     <None Include="MTStar\UIMaps\Frame\FrameDept.roi">
       <SubType>Designer</SubType>
     </None>
+    <None Include="MTStar\UIMaps\Frame\FrameTare.roi" />
     <None Include="MTStar\UIMaps\Major\BasicConfig.roi" />
     <None Include="MTStar\UIMaps\Major\Export.roi" />
     <None Include="MTStar\UIMaps\Major\Import.roi" />
