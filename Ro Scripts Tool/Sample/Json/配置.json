@@ -1,31 +1,31 @@
 {
-    "properties": 
+    "properties":
     {
         "level": "default",
-        "allpros": 
+        "allpros":
         [
             {"id": "","value": "","description": ""}
         ]
     },
 
-    "testmode": 
+    "testmode":
     {
         "selectmode": "",
         "loopnum": 1
     },
 
-    "languages": 
+    "languages":
     [
         {"id": "","items": ["你好", "hello"]}
     ],
 
-    "macros": 
+    "macros":
     {
         "id": "",
-        "activities": 
+        "activities":
         [
             {
-                "action": "操作类型","elementid": "操作控件的id","clearfirst": true,"value": "假定是截图，或输入的话，给定值","waituntil": 
+                "action": "操作类型","elementid": "操作控件的id","clearfirst": true,"value": "假定是截图，或输入的话，给定值","waituntil":
                 [
                     {"expected": {"type": "预期值类型","value": "预期值"},"actual": {"type": "实际值类型","name": null,"value": "实际值"}}
                 ]

@@ -82,7 +82,6 @@
   <xs:element name="Directory.Move" type="oswin:Directory.Move" substitutionGroup="tcs:Activity" />
   <xs:element name="Directory.Create" type="oswin:Directory.Create" substitutionGroup="tcs:Activity" />
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -409,7 +408,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -442,7 +440,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
 
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

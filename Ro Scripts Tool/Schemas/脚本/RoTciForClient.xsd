@@ -87,7 +87,6 @@
   <xs:element name="Tree" type="clientinfo:Tree" substitutionGroup="clientinfo:Resource" />
   <xs:element name="TreeItem" type="clientinfo:TreeItem" substitutionGroup="clientinfo:Resource" />
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -95,7 +94,6 @@
   ******************************************************************************
   ==============================================================================
   -->
-
 
   <xs:complexType name="ElementInfo">
     <xs:sequence>
@@ -162,7 +160,6 @@
       <xs:enumeration value="Name" />
     </xs:restriction>
   </xs:simpleType>
-
 
   <!--控件元素-->
   <xs:complexType name="Window">
@@ -297,7 +294,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-
   <xs:complexType name="RadioButton">
     <xs:complexContent>
       <xs:extension base="clientinfo:GUIControl" />
@@ -399,6 +395,4 @@
       <xs:extension base="clientinfo:GUIControl" />
     </xs:complexContent>
   </xs:complexType>
-
-
 </xs:schema>

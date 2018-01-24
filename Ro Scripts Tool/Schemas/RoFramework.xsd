@@ -7,7 +7,6 @@
   xmlns:ros="http://tempuri.org/RoFramework.xsd"
   xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -28,7 +27,6 @@
       </header>
     </xs:documentation>
   </xs:annotation>
-
 
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -65,7 +63,6 @@
     </xs:complexType>
   </xs:element>
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -84,7 +81,6 @@
     <xs:attribute name="TreatErrorsAsWarnings" type="ros:Boolean" use="optional" />
     <xs:attribute name="Explain" type="xs:string" use="optional" />
   </xs:complexType>
-
 
   <!--
   ==============================================================================
@@ -167,7 +163,6 @@
     <xs:attribute name="ID" type="ros:ID" />
   </xs:complexType>
 
-
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                                    Import Types
@@ -187,7 +182,6 @@
     <xs:attribute name="ID" type="ros:ID" use="required" />
     <xs:attribute name="Type" type="ros:Type" use="required" />
   </xs:complexType>
-
 
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -220,10 +214,9 @@
     <xs:attribute name="Bits" type="ros:Bit" use="optional" />
   </xs:complexType>
 
-
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-                                   Test Types 
+                                   Test Types
                                    New Version
                                    TODO 4-27 Update
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -240,7 +233,6 @@
     </xs:choice>
   </xs:complexType>
 
-
   <xs:element name="TestCase" type="ros:TestCase">
     <xs:annotation>
       <xs:documentation>
@@ -250,7 +242,6 @@
     </xs:annotation>
   </xs:element>
 
-
   <xs:element name="MacroReference" type="ros:MacroReference" substitutionGroup="ros:Activity">
     <xs:annotation>
       <xs:documentation>
@@ -258,7 +249,6 @@
       </xs:documentation>
     </xs:annotation>
   </xs:element>
-
 
   <xs:complexType name="TestCase">
     <xs:annotation>
@@ -273,13 +263,11 @@
     <xs:attribute name="ID" type="ros:ID" use="required" />
   </xs:complexType>
 
-
   <xs:complexType name="TestSteps">
     <xs:sequence>
       <xs:element ref="ros:Activity" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
-
 
   <xs:complexType name="MacroReference">
 
@@ -319,7 +307,6 @@
   <xs:element name="IntegerValue" type="ros:IntegerValue" substitutionGroup="ros:Value" />
 
   <xs:element name="FloatValue" type="ros:FloatValue" substitutionGroup="ros:Value" />
-
 
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -454,7 +441,6 @@
     <xs:union memberTypes="ros:PropertyPlaceholder ros:PureFloat" />
   </xs:simpleType>
 
-
   <xs:simpleType name="Bit">
     <xs:restriction base="xs:token">
       <xs:enumeration value="32Bits" />
@@ -462,6 +448,4 @@
       <xs:enumeration value="default" />
     </xs:restriction>
   </xs:simpleType>
-
-
 </xs:schema>

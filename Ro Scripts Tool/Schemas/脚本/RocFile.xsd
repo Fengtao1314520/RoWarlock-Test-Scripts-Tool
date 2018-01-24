@@ -79,7 +79,6 @@
     </xs:sequence>
   </xs:complexType>
 
-
   <xs:complexType name="Language">
     <xs:annotation>
       <xs:documentation>

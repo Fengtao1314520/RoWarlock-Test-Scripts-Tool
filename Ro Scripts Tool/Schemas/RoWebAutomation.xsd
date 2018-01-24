@@ -38,7 +38,6 @@
   -->
   <xs:import namespace="http://tempuri.org/RoFramework.xsd" />
 
-
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                                   操作
@@ -67,13 +66,11 @@
   <xs:element name="Scroll.Down" type="web:Scroll.Down" substitutionGroup="tcs:Activity" />
   <xs:element name="Scroll.Up" type="web:Scroll.Up" substitutionGroup="tcs:Activity" />
 
-
   <!--
   启动浏览器
   Update 2017-08-15 更改为Browser是attribute选填项目，新增PhantomJS,以及特殊的ChromeHeadless模式
   -->
   <xs:element name="Launch.Browser" type="web:Launch.Browser" substitutionGroup="tcs:Activity" />
-
 
   <!--移动鼠标-->
   <xs:element name="Mouse.Move" type="web:Mouse.Move" substitutionGroup="tcs:Activity" />
@@ -82,8 +79,8 @@
   <!--
   重新开发验证方面的操作，因为预期值和实际值要区分开来，不然开发过程中，遇到的情况会特别多
   Update 9-19新的写法
-  
-  --> 
+
+  -->
   <!--验证操作-->
   <xs:element name="WaitUntil.AreEqual" type="web:WaitUntil.AreEqual" substitutionGroup="tcs:Activity" />
   <xs:element name="WaitUntil.AreNotEqual" type="web:WaitUntil.AreNotEqual" substitutionGroup="tcs:Activity" />
@@ -107,7 +104,6 @@
   <!--等待-->
   <xs:element name="Sleep" type="web:Sleep" substitutionGroup="tcs:Activity" />
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -118,15 +114,12 @@
   ==============================================================================
   -->
 
-
   <xs:complexType name="ActualValue">
     <xs:attribute name="RoWebElementID" type="xs:token" />
     <xs:attribute name="ActualType" type="web:ActualType" />
     <xs:attribute name="Name" type="xs:string" use="optional" />
   </xs:complexType>
 
-
-  
   <xs:complexType name="LaunchActivity" abstract="true">
     <xs:complexContent>
       <xs:extension base="tcs:Activity">
@@ -152,7 +145,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
 
   <!--################
 Alert
@@ -370,12 +362,10 @@ Browser
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--################
 Launch
 
 ###############-->
-
 
   <xs:complexType name="Launch.Browser">
     <xs:annotation>
@@ -392,7 +382,6 @@ Launch
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
 
   <!--################
 Scroll
@@ -425,7 +414,6 @@ Scroll
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--################
 Mouse
 ###############-->
@@ -457,7 +445,6 @@ Mouse
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
 
   <!--################
 WebElement
@@ -550,7 +537,6 @@ WebElement
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--################
 WaitUntil
 ###############-->
@@ -565,7 +551,7 @@ WaitUntil
     <xs:complexContent>
       <xs:extension base="web:WebNoIdActivity">
         <xs:sequence minOccurs="1" maxOccurs="1">
-          <xs:element name="WaitInfo" type="web:AreInfo"  minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="WaitInfo" type="web:AreInfo"  minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="IgnoreCase" type="tcs:Boolean" use="optional" />
       </xs:extension>
@@ -583,7 +569,7 @@ WaitUntil
     <xs:complexContent>
       <xs:extension base="web:WebNoIdActivity">
         <xs:sequence minOccurs="1" maxOccurs="1">
-          <xs:element name="WaitInfo" type="web:AreInfo" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="WaitInfo" type="web:AreInfo" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="IgnoreCase" type="tcs:Boolean" use="optional" />
       </xs:extension>
@@ -601,7 +587,7 @@ WaitUntil
     <xs:complexContent>
       <xs:extension base="web:WebNoIdActivity">
         <xs:sequence minOccurs="1" maxOccurs="1">
-          <xs:element name="ActualValue" type="web:ActualValue" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="ActualValue" type="web:ActualValue" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -618,7 +604,7 @@ WaitUntil
     <xs:complexContent>
       <xs:extension base="web:WebNoIdActivity">
         <xs:sequence minOccurs="1" maxOccurs="1">
-          <xs:element name="ActualValue" type="web:ActualValue" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="ActualValue" type="web:ActualValue" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -666,7 +652,7 @@ WaitUntil
     <xs:complexContent>
       <xs:extension base="web:WebNoIdActivity">
         <xs:sequence minOccurs="1" maxOccurs="1">
-          <xs:element name="WaitInfo" type="web:AreInfo" minOccurs="1" maxOccurs="unbounded"/>
+          <xs:element name="WaitInfo" type="web:AreInfo" minOccurs="1" maxOccurs="unbounded" />
         </xs:sequence>
         <xs:attribute name="IgnoreCase" type="tcs:Boolean" use="optional" />
       </xs:extension>
@@ -679,7 +665,6 @@ WaitUntil
                                值类型
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
   -->
-  
 
   <!--长度验证-->
   <xs:complexType name="LengthType">
@@ -714,7 +699,6 @@ WaitUntil
     </xs:complexContent>
   </xs:complexType>
 
-
   <xs:complexType name="Sleep">
     <xs:annotation>
       <xs:documentation>
@@ -730,16 +714,13 @@ WaitUntil
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
-  
+
   <xs:complexType name="AreInfo">
     <xs:attribute name="ExpectedValue" type="xs:string" />
-    <xs:attribute name="ActualType" type="web:ActualType"/>
+    <xs:attribute name="ActualType" type="web:ActualType" />
     <xs:attribute name="Name" type="xs:string" use="optional" />
     <xs:attribute name="RoWebElementID" type="xs:token" />
   </xs:complexType>
-  
-
 
   <!--
   ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -768,7 +749,6 @@ WaitUntil
     </xs:restriction>
   </xs:simpleType>
 
-
   <!--实际值类型-->
   <xs:simpleType name="ActualType">
     <xs:restriction base="xs:token">
@@ -782,5 +762,4 @@ WaitUntil
       <xs:enumeration value="RoWebElement.GetAttribute" />
     </xs:restriction>
   </xs:simpleType>
-
 </xs:schema>

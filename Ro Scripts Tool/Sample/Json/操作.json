@@ -1,43 +1,43 @@
 {
-    "annotation": 
+    "annotation":
     {
         "description": "测试总文本描述",
         "created": { "author": "nate","date": "2017-08-10"},
         "lastupdated": {"author": "nate","date": "2017-08-10"}
     },
-    "testconfig": 
+    "testconfig":
     {
-        "properties": 
+        "properties":
         [
             {"id": "参数id","value": "参数值" },
             {"id": "参数id","value": "参数值" }
         ],
-        "imports": 
+        "imports":
         [
             { "id": "roi标定id","type": "roi类型","path": "路径{abc}"},
             { "id": "roi标定id","type": "roi类型","path": "路径{abc}"}
         ]
     },
-    "startapp": 
+    "startapp":
     [
         {"appname": "chrome","execuepath": "路径{abc}","basewindowsbits": 32,"parameters": ["参数a", "参数b"]}
     ],
 
-    "tests": 
+    "tests":
     [
         {
             "id": "测试testcase的id",
-            "annotation": 
+            "annotation":
             {
                 "description": "测试总文本描述",
                 "created": {"author": "nate","date": "2017-08-10"},
                 "lastupdated": {"author": "nate","date": "2017-08-10"}
             },
-            "teststeps": 
+            "teststeps":
             [
                 {
                     "action": "操作类型","elementid": "操作控件的id","clearfirst": true, "value": "假定是截图，或输入的话，给定值",
-                    "waituntil": 
+                    "waituntil":
                     [
                         { "expected": {"type": "预期值类型","value": "预期值"},"actual": {"type": "实际值类型","name": null,"value": "实际值"}}
                     ]
@@ -45,7 +45,7 @@
 
                 {
                     "action": "操作类型","elementid": "操作控件的id","clearfirst": true, "value": "假定是截图，或输入的话，给定值",
-                    "waituntil": 
+                    "waituntil":
                     [
                         { "expected": {"type": "预期值类型","value": "预期值"},"actual": {"type": "实际值类型","name": "实际值的attribute名称","value": "实际值"}}
                     ]
@@ -53,7 +53,7 @@
 
                 {
                     "action": "操作类型","elementid": "操作控件的id","clearfirst": true, "value": "假定是截图，或输入的话，给定值",
-                    "waituntil": 
+                    "waituntil":
                     [
                         { "expected": null,"actual": {"type": "实际值类型","name":null,"value": "实际值"}}
                     ]

@@ -52,8 +52,7 @@
   <xs:element name="resource" type="roi:resource" abstract="true" />
 
   <!--超集-->
-  <xs:element name="superset" type="roi:superset"/>
-
+  <xs:element name="superset" type="roi:superset" />
 
   <!--单元素-->
   <xs:element name="sigele" type="roi:sigele" substitutionGroup="roi:resource" />
@@ -76,9 +75,6 @@
     </xs:sequence>
   </xs:complexType>
 
-
- 
-  
   <!--元集-->
   <xs:complexType name="meta">
     <xs:sequence>
@@ -86,7 +82,6 @@
       <xs:element ref="roi:superset" minOccurs="0" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
-
 
   <!--包含id,解释-->
   <xs:complexType name="resource" abstract="true">
@@ -98,7 +93,6 @@
     <xs:attribute name="id" type="tcs:ID" use="optional" />
     <xs:attribute name="explain" type="xs:string" use="optional" />
   </xs:complexType>
-
 
   <!--定义超集-->
   <xs:complexType name="superset">
@@ -114,7 +108,6 @@
     <xs:attribute name="explain" type="xs:string" use="optional" />
   </xs:complexType>
 
-
   <!--定义子集-->
   <xs:complexType name="subset">
     <xs:annotation>
@@ -129,7 +122,6 @@
     <xs:attribute name="explain" type="xs:string" use="optional" />
   </xs:complexType>
 
-
   <!--定义单元素-->
   <xs:complexType name="sigele">
     <xs:annotation>
@@ -141,7 +133,6 @@
       <xs:extension base="roi:roitype" />
     </xs:complexContent>
   </xs:complexType>
-
 
   <!--定义同父元素-->
   <xs:complexType name="grpele">
@@ -160,7 +151,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--定义复合元素-->
   <xs:complexType name="cpxele">
     <xs:annotation>
@@ -178,7 +168,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--
   ==============================================================================
   ******************************************************************************
@@ -186,7 +175,6 @@
   ******************************************************************************
   ==============================================================================
   -->
-
 
   <!--定义roitype类型-->
   <xs:complexType name="roitype" abstract="true">
@@ -199,7 +187,6 @@
     </xs:complexContent>
   </xs:complexType>
 
-
   <!--定义valueinfo-->
   <xs:complexType name="valueinfo">
     <xs:simpleContent>
@@ -210,7 +197,6 @@
     </xs:simpleContent>
   </xs:complexType>
 
-
   <!--定义groups-->
   <xs:complexType name="groups">
     <xs:sequence>
@@ -218,14 +204,12 @@
     </xs:sequence>
   </xs:complexType>
 
-
   <!--定义complexs-->
   <xs:complexType name="complexs">
     <xs:sequence>
       <xs:element name="cpxchild" type="roi:cpxchild" minOccurs="1" maxOccurs="unbounded" />
     </xs:sequence>
   </xs:complexType>
-
 
   <!--定义info-->
   <xs:complexType name="info">
@@ -235,7 +219,6 @@
     <xs:attribute name="explain" type="xs:string" use="optional" />
   </xs:complexType>
 
-
   <!--定义cpxchild-->
   <xs:complexType name="cpxchild">
     <xs:attribute name="id" type="tcs:ID" />
@@ -243,7 +226,6 @@
     <xs:attribute name="childvalue" type="xs:string" />
     <xs:attribute name="explain" type="xs:string" use="optional" />
   </xs:complexType>
-
 
   <!--
   ==============================================================================
@@ -263,6 +245,4 @@
       <xs:enumeration value="Link" />
     </xs:restriction>
   </xs:simpleType>
-
-
 </xs:schema>

@@ -17,22 +17,19 @@
     }
   ],
 
-
   //复合元素队列
   "cpxeles":
   [
     {
-      "index": null,"locator": "","value": "","complexs": 
+      "index": null,"locator": "","value": "","complexs":
       [
         {"id": "","index": null,"childValue": ""}
       ]
     }
   ],
 
-
-
   //超集,唯一和xml不一样的地方，因为json不支持不同结构组成一个数组
-  "superset": 
+  "superset":
   {
     "sigeles": [],
     "grpeles": [],
