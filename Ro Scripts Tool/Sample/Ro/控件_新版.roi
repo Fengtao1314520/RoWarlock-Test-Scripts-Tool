@@ -3,7 +3,7 @@
 <roi:roi xmlns:roi="http://tempuri.org/RoiFile.xsd"
          xmlns:tcs="http://tempuri.org/RoFramework.xsd">
 <!--******************************************************************************
-    TODO 2017-06-05更新Tci文件中控件的命名规则
+    TODO 2017-06-05更新roi文件中控件的命名规则
     By:冯涛(Nate Ford)
     
     1.控件名称需要明确表达控件的作用，具有简单明了的表现形式

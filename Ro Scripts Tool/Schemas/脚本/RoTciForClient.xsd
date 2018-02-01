@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 
 <xs:schema
-  targetNamespace="http://tempuri.org/RoTciForClient.xsd"
+  targetNamespace="http://tempuri.org/RoroiForClient.xsd"
   attributeFormDefault="qualified"
   elementFormDefault="qualified"
-  xmlns:clientinfo="http://tempuri.org/RoTciForClient.xsd"
+  xmlns:clientinfo="http://tempuri.org/RoroiForClient.xsd"
   xmlns:xs="http://www.w3.org/2001/XMLSchema"
   xmlns:tcs="http://tempuri.org/RoFramework.xsd">
 
@@ -18,7 +18,7 @@
 
   <xs:annotation>
     <xs:documentation>
-      RoWarlock 测试脚本Client Tci文件框架
+      RoWarlock 测试脚本Client roi文件框架
       版权 著作权归属冯涛所有
       Author: 冯涛
       E-mail: fengtao.1314520@163.com

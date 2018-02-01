@@ -41,16 +41,16 @@
 
     </ros:Properties>
 
-    <!--Tci文件引入，支持带入参数-->
+    <!--roi文件引入，支持带入参数-->
     <ros:Imports>
       <ros:ConfigurationFile ros:ID="A" ros:Type="RoWeb">
         <ros:Path>${参数1}\${参数2}\A.roi</ros:Path>
       </ros:ConfigurationFile>
       <ros:ConfigurationFile ros:ID="B" ros:Type="RoClient">
-        <ros:Path>${Path}\B.tci</ros:Path>
+        <ros:Path>${Path}\B.roi</ros:Path>
       </ros:ConfigurationFile>
       <ros:ConfigurationFile ros:ID="C" ros:Type="RoMobile">
-        <ros:Path>C.tci</ros:Path>
+        <ros:Path>C.roi</ros:Path>
       </ros:ConfigurationFile>
     </ros:Imports>
 
