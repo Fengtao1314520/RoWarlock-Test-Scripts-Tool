@@ -67,6 +67,18 @@
     <None Include="MTStar\Scripts\数据管理-单页功能\MTStar_条码管理_Dev.ros">
       <SubType>Designer</SubType>
     </None>
+    <None Include="MTStar\Scripts\数据管理-多页功能\PLU\MTStar_PLU管理_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\数据管理-多页功能\PLU\MTStar_PLU列表_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\数据管理-多页功能\附加文本\MTStar_ET列表_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\Scripts\数据管理-多页功能\附加文本\MTStar_ET管理_Dev.ros">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="MTStar\Scripts\电子秤管理\基础配置\MTStar_TC%28690,691,529,63%29_Dev.roi" />
     <None Include="MTStar\Scripts\电子秤管理\通用\MTStar_TC%28079,080,081,084%29_Dev.ros">
       <SubType>Designer</SubType>
@@ -97,7 +109,12 @@
     <None Include="MTStar\Scripts\数据管理-单页功能\MTStar_部门管理_Dev.ros">
       <SubType>Designer</SubType>
     </None>
-    <None Include="MTStar\UIMaps\Frame\FramePLU.roi" />
+    <None Include="MTStar\UIMaps\Frame\FrameET.roi">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MTStar\UIMaps\Frame\FramePLU.roi">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="MTStar\UIMaps\Frame\FrameVendor.roi">
       <SubType>Designer</SubType>
     </None>
@@ -193,9 +210,7 @@
     <Content Include="Sample\自述文件.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MTStar\Scripts\数据管理-多页功能\PLU\" />
     <Folder Include="MTStar\Scripts\数据管理-多页功能\标签管理\" />
-    <Folder Include="MTStar\Scripts\数据管理-多页功能\附加文本\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

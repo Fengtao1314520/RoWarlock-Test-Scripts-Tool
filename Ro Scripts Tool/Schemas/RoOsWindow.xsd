@@ -18,12 +18,7 @@
 
   <xs:annotation>
     <xs:documentation>
-      RoWarlock 测试脚本Windows操作框架
-      版权 著作权归属冯涛所有
-      Author: 冯涛
-      E-mail: fengtao.1314520@163.com
-      Skype/MSN: fengtao.1314520@hotmail.com
-      Gmail: fengtao.1314520@gmail.com
+    
     </xs:documentation>
   </xs:annotation>
 

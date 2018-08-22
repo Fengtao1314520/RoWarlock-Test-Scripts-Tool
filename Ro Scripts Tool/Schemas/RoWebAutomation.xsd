@@ -16,14 +16,7 @@
 
   <xs:annotation>
     <xs:documentation>
-      RoWarlock 测试脚本Web操作框架
-      版权、著作权归属冯涛所有
-      基于Apache-2.0开源协议，授权给其他人员使用。如需修改Roi文件对应框架文件，需在被修改文件中，对本著作权人进行描述和引申
-      Author: 冯涛
-      E-mail: fengtao.1314520@163.com
-      Skype/MSN: fengtao.1314520@hotmail.com
-      Gmail: fengtao.1314520@gmail.com
-
+    
       Update 2017-08-15 更新至最新版本
       Update 2017-09-19 修改了大量冗余信息
     </xs:documentation>
